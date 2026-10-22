@@ -3631,9 +3631,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.imsrtpservice@3.1 \
     vendor.qti.latency@2.3 \
     vendor.qti.mstatservice@1.0 \
-    vendor.qti.qccsyshal_aidl-V1-ndk \
+    vendor.qti.qccsyshal_aidl-V1-ndk.system_ext \
     vendor.qti.qccsyshal_aidl-halimpl \
-    vendor.qti.qccvndhal_aidl-V1-ndk \
+    vendor.qti.qccvndhal_aidl-V1-ndk.system_ext \
     vendor.qti.qspmhal@1.0 \
     com.android.hardware.cas \
     com.google.android.widevine-12498615 \

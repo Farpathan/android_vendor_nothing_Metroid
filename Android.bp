@@ -53184,7 +53184,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.qccsyshal_aidl-V1-ndk",
+    name: "vendor.qti.qccsyshal_aidl-V1-ndk.system_ext",
+    stem: "vendor.qti.qccsyshal_aidl-V1-ndk",
     owner: "nothing",
     strip: {
         none: true,
@@ -53231,7 +53232,7 @@ cc_prebuilt_library_shared {
                 "libbase",
                 "libbinder",
                 "libbinder_ndk",
-                "vendor.qti.qccsyshal_aidl-V1-ndk",
+                "vendor.qti.qccsyshal_aidl-V1-ndk.system_ext",
                 "libc++",
                 "libc",
                 "libm",
@@ -53245,7 +53246,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.qti.qccvndhal_aidl-V1-ndk",
+    name: "vendor.qti.qccvndhal_aidl-V1-ndk.system_ext",
+    stem: "vendor.qti.qccvndhal_aidl-V1-ndk",
     owner: "nothing",
     strip: {
         none: true,
