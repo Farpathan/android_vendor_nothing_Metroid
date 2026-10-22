@@ -1,0 +1,215 @@
+on boot
+    write dev/kmsg "reset persist.sys.mdlog.qdss_enable on boot phase"
+    setprop persist.sys.mdlog.qdss_enable 0
+
+# sandro.wan@network, add for user build support audio qdss logging
+# charles.tang@network, applicable the qdss logging configuration for userdebug also
+on property:vendor.all.modules.ready=1
+    chown system system /sys/bus/coresight/devices/coresight-stm/enable_source
+    chmod 660 /sys/bus/coresight/devices/coresight-stm/enable_source
+    mkdir /config/stp-policy/coresight-stm:p_ost.policy 0660 root root
+    mkdir /config/stp-policy/coresight-stm:p_ost.policy/default 0660 root root
+    write /sys/bus/coresight/devices/coresight-stm/traceid 0x10
+    # from init.qti.kernel.debug-volcano.sh#enable_stm_events
+    write /sys/bus/coresight/devices/coresight-tmc-etr/buffer_size 0x2000000
+    write /sys/bus/coresight/devices/coresight-tmc-etr/enable_sink 1
+    write /sys/class/stm_source/ftrace/stm_source_link none
+    write /sys/bus/coresight/devices/coresight-stm/enable_source 1
+    write /sys/bus/coresight/devices/coresight-stm/hwevent_enable 0
+
+# sandro.wan@network, add for cpumonitor
+on property:persist.sys.ntcpumonitor.enable=*
+   write dev/kmsg "update ntcpumonitor enable"
+   write /proc/cpu_monitor/enable_monitor ${persist.sys.ntcpumonitor.enable}
+
+#porting qxdm logmask
+on property:persist.sys.mdlog.enable=0
+    write dev/kmsg "stop diag_mdlog"
+    start diag_mdlog_stop
+
+service diag_modem_start /system/vendor/bin/diag_mdlog -f /vendor/etc/Diag.cfg -u -o /data/vendor/diag_mdlog -s ${persist.vendor.qcom.mdlog.size:-250} -n ${persist.vendor.qcom.mdlog.num:-15} -c -i
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw oem_2905
+    disabled
+    oneshot
+
+service diag_qdss_modem_start /system/vendor/bin/diag_mdlog -f /vendor/etc/Diag.cfg -q 2 -u -o /data/vendor/diag_mdlog -s ${persist.vendor.qcom.mdlog.size:-250} -n ${persist.vendor.qcom.mdlog.num:-15} -c -i
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw oem_2902 oem_2905
+    disabled
+    oneshot
+
+ on property:persist.sys.mdlog.enable=1
+    write dev/kmsg "start modem mdlog"
+    start diag_modem_start
+
+ on property:persist.sys.mdlog.qdss_enable=1 && property:sys.boot_completed=1
+    write dev/kmsg "start qdss modem mdlog"
+    start diag_qdss_modem_start
+
+service diag_btlog_start /system/vendor/bin/diag_mdlog -f /vendor/etc/Diag_bt.cfg -u -o /data/vendor/diag_mdlog -s 100 -n 15 -c
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw
+    disabled
+    oneshot
+
+service diag_btlog_qdss_start /system/vendor/bin/diag_mdlog -f /vendor/etc/Diag_bt.cfg -q 2 -u -o /data/vendor/diag_mdlog -s 100 -n 15 -c
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw oem_2902
+    disabled
+    oneshot
+
+on property:persist.sys.btdiaglog.enable=1
+    write dev/kmsg "start diag_btdiaglog"
+    start diag_btlog_start
+
+on property:persist.sys.btdiaglog.qdss_enable=1
+    write dev/kmsg "start diag_btdiaglog qdss"
+    start diag_btlog_qdss_start
+
+service diag_sensorlog_start /system/vendor/bin/diag_mdlog -f /vendor/etc/Diag_sensor.cfg -u -o /data/vendor/diag_mdlog -s 100 -n 15 -c
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw
+    disabled
+    oneshot
+
+service diag_sensorlog_qdss_start /system/vendor/bin/diag_mdlog -f /vendor/etc/Diag_sensor.cfg -q 2 -u -o /data/vendor/diag_mdlog -s 100 -n 15 -c
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw oem_2902
+    disabled
+    oneshot
+
+on property:persist.sys.sensordiaglog.enable=1
+    write dev/kmsg "start diag_sensorlog"
+    start diag_sensorlog_start
+
+on property:persist.sys.sensordiaglog.qdss_enable=1
+    write dev/kmsg "start diag_sensorlog qdss"
+    start diag_sensorlog_qdss_start
+
+service diag_audiolog_start /system/vendor/bin/diag_mdlog -f /vendor/etc/Diag_audio.cfg -q 4 -u -o /data/vendor/diag_mdlog -s 100 -n 15 -c
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw oem_2902
+    disabled
+    oneshot
+
+service diag_audiolog_qdss_start /system/vendor/bin/diag_mdlog -f /vendor/etc/Diag_audio_modem.cfg -q 6 -u -o /data/vendor/diag_mdlog -s 250 -n 15 -c
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw oem_2902
+    disabled
+    oneshot
+
+on property:persist.sys.audiodiag.enable=1
+    write dev/kmsg "start diag_audiolog"
+    start diag_audiolog_start
+
+on property:persist.sys.audiodiag.qdss_enable=1
+    write dev/kmsg "start diag_audiolog qdss"
+    start diag_audiolog_qdss_start
+
+
+service diag_chargelog_start /system/vendor/bin/diag_mdlog -f /vendor/etc/Diag_charge.cfg -u -o /data/vendor/diag_mdlog -s 100 -n 15 -c
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw
+    disabled
+    oneshot
+
+service diag_chargelog_qdss_start /system/vendor/bin/diag_mdlog -f /vendor/etc/Diag_charge.cfg -q 2 -u -o /data/vendor/diag_mdlog -s 100 -n 15 -c
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw oem_2902
+    disabled
+    oneshot
+
+on property:persist.sys.chargediag.enable=1
+    write dev/kmsg "start diag_charge"
+    start diag_chargelog_start
+
+on property:persist.sys.chargediag.qdss_enable=1
+    write dev/kmsg "start diag_charge qdss"
+    start diag_chargelog_qdss_start
+
+on post-fs-data
+    mkdir /data/vendor/diag_mdlog 0770 root system
+    restorecon_recursive /data/vendor/diag_mdlog
+
+service diag_gpslog_start /system/vendor/bin/diag_mdlog -f /vendor/etc/Diag_gnss.cfg -u -o /data/vendor/diag_mdlog -s 100 -n 15 -c
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw
+    disabled
+    oneshot
+
+service diag_gpslog_qdss_start /system/vendor/bin/diag_mdlog -f /vendor/etc/Diag_gnss.cfg -q 2 -u -o /data/vendor/diag_mdlog -s 100 -n 15 -c
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw oem_2902
+    disabled
+    oneshot
+
+on property:persist.sys.gpsdiag.enable=1
+    write dev/kmsg "start diag_gps"
+    start diag_gpslog_start
+
+on property:persist.sys.gpsdiag.qdss_enable=1
+    write dev/kmsg "start diag_gps qdss"
+    start diag_gpslog_qdss_start
+
+service diag_noiselog_start /system/vendor/bin/diag_mdlog -f /vendor/etc/Diag_noise.cfg -o /data/vendor/diag_mdlog -s 100 -n 15 -c
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw
+    disabled
+    oneshot
+
+service diag_noiselog_qdss_start /system/vendor/bin/diag_mdlog -f /vendor/etc/Diag_noise.cfg -q 2 -u -o /data/vendor/diag_mdlog -s 100 -n 15 -c
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw oem_2902
+    disabled
+    oneshot
+
+on property:persist.sys.noisediag.enable=1
+    write dev/kmsg "start diag_noise"
+    start diag_noiselog_start
+
+on property:persist.sys.noisediag.qdss_enable=1
+    write dev/kmsg "start diag_noise qdss"
+    start diag_noiselog_qdss_start
+
+on property:persist.sys.vendor.cnss_diag=start
+    start vendor.cnss_diag
+
+on property:persist.sys.vendor.cnss_diag=stop
+    stop vendor.cnss_diag
+
+service diag_rflog_start /system/vendor/bin/diag_mdlog -f /vendor/etc/Diag_rf.cfg -u -o /data/vendor/diag_mdlog -s 300 -n 50 -c
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw
+    disabled
+    oneshot
+
+service diag_rflog_qdss_start /system/vendor/bin/diag_mdlog -f /vendor/etc/Diag_rf.cfg -q 2 -u -o /data/vendor/diag_mdlog -s 300 -n 50 -c
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw oem_2902
+    disabled
+    oneshot
+
+on property:persist.sys.rfdiaglog.enable=1
+    write dev/kmsg "start diag_rfdiaglog"
+    start diag_rflog_start
+
+on property:persist.sys.rfdiaglog.qdss_enable=1
+    write dev/kmsg "start diag_rfdiaglog qdss"
+    start diag_rflog_qdss_start

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Nio Motion Tuning Parameters Configuration -->
+<!-- Copyright(c) 2023 Nio China,Inc.  -->
+
+<motion_params>
+    <zoom_ratio_stable_count>13</zoom_ratio_stable_count>         <!--uint类型:zoomratio稳定n帧后才开始调整曝光-->
+    <max_zoom_ratio>1</max_zoom_ratio>                     <!--float类型:大于此physicalZoomratio则不会调整曝光-->
+    <max_gain>210</max_gain>                                <!--float类型:最大gain，曝光调整不得超过该gain值，否则噪点过多-->
+    <short_loop>2</short_loop>                              <!--uint类型:从低运动等级到高运动等级，需要命中n次-->
+    <long_loop>6</long_loop>                                <!--uint类型:从高运动等级到低运动等级，需要命中n次-->
+    <switch_to_60fps_speed>20</switch_to_60fps_speed>       <!--float类型:运动速度大于该值，则预览帧率提高到60fps-->
+    <!--gyro曲线拐点：每个拐点必须以角速度幅值递增方式配置，且拐点值不能大于gyroMagThresold-->
+    <gyroPoint>
+        <gyroMag>2</gyroMag>                              <!--float类型:gyro角速度幅值-->
+        <expectSpeed>1</expectSpeed>                        <!--float类型:当画面不运动时，期待输出的motionspeed-->
+    </gyroPoint>
+    <gyroPoint>
+        <gyroMag>3</gyroMag>                              <!--float类型:gyro角速度幅值-->
+        <expectSpeed>3</expectSpeed>                      <!--float类型:当画面不运动时，期待输出的motionspeed-->
+    </gyroPoint>
+    <gyroFactor>10</gyroFactor>                               <!--float类型:假设motionspeed=gyro幅值*gyroFactor-->
+    <gyroMagThresold>5</gyroMagThresold>                   <!--float类型:gyro幅值小于该阈值会影响motionspeed-->
+    <zoom_ratio_section>
+        <zoom_ratio_start>1.0</zoom_ratio_start>            <!--float类型:指定physical zoomratio范围-->
+        <zoom_ratio_end>1.2</zoom_ratio_end>
+        <addtionFactor>1.0</addtionFactor>                  <!--float类型:曝光最终缩短比例 = trigger factor * addtionFactor-->
+    </zoom_ratio_section>
+    <zoom_ratio_section>
+        <zoom_ratio_start>1.2</zoom_ratio_start>
+        <zoom_ratio_end>2.8</zoom_ratio_end>
+        <addtionFactor>0.8</addtionFactor>
+    </zoom_ratio_section>
+    <trigger>
+        <lux_start>0</lux_start>                            <!--float类型:指定lux范围-->
+        <lux_end>100</lux_end>
+        <orig_exptime_start>0</orig_exptime_start>          <!--uint64类型:指定exptime范围-->
+        <orig_exptime_end>32000000000</orig_exptime_end>
+        <adrc_gain>10</adrc_gain>                           <!--float类型:无人脸时，大于该adrcGain则不进入调整曝光-->
+        <face_adrc_gain>10</face_adrc_gain>                 <!--float类型:有人脸时，大于该adrcGain则不进入调整曝光-->
+        <antibanding>1</antibanding>                        <!--uint类型:开关debanding预览算法，默认为开-->
+        <motionLevel>                                       <!--运动等级最多可划分6级，由tuning决定运动等级划分标准及每个等级缩短曝光比例-->
+            <level>1</level>                                <!--uint类型:当前运动等级-->
+            <motion_speed_start>12</motion_speed_start>      <!--float类型:当前等级的运动速度范围-->
+            <motion_speed_end>20</motion_speed_end>
+            <factor>3</factor>                              <!--float类型:曝光时间缩短n倍-->
+        </motionLevel>
+        <motionLevel>
+            <level>2</level>
+            <motion_speed_start>20</motion_speed_start>
+            <motion_speed_end>36</motion_speed_end>
+            <factor>4</factor>
+        </motionLevel>
+        <motionLevel>
+            <level>3</level>
+            <motion_speed_start>36</motion_speed_start>
+            <motion_speed_end>45</motion_speed_end>
+            <factor>5</factor>
+        </motionLevel>
+        <motionLevel>
+            <level>4</level>
+            <motion_speed_start>45</motion_speed_start>
+            <motion_speed_end>10000</motion_speed_end>      <!--最高等级的motion_speed_end固定为10000，即运动速度大于该motion_speed_start的都认为采用这个策略-->
+            <factor>6</factor>
+        </motionLevel>
+    </trigger>
+    <trigger>
+        <lux_start>100</lux_start>                            <!--float类型:指定lux范围-->
+        <lux_end>150</lux_end>
+        <orig_exptime_start>0</orig_exptime_start>          <!--uint64类型:指定exptime范围-->
+        <orig_exptime_end>32000000000</orig_exptime_end>
+        <adrc_gain>10</adrc_gain>                           <!--float类型:无人脸时，大于该adrcGain则不进入调整曝光-->
+        <face_adrc_gain>10</face_adrc_gain>                 <!--float类型:有人脸时，大于该adrcGain则不进入调整曝光-->
+        <antibanding>1</antibanding>                        <!--uint类型:开关debanding预览算法，默认为开-->
+        <motionLevel>                                       <!--运动等级最多可划分6级，由tuning决定运动等级划分标准及每个等级缩短曝光比例-->
+            <level>1</level>                                <!--uint类型:当前运动等级-->
+            <motion_speed_start>12</motion_speed_start>      <!--float类型:当前等级的运动速度范围-->
+            <motion_speed_end>20</motion_speed_end>
+            <factor>3</factor>                              <!--float类型:曝光时间缩短n倍-->
+        </motionLevel>
+        <motionLevel>
+            <level>2</level>
+            <motion_speed_start>20</motion_speed_start>
+            <motion_speed_end>36</motion_speed_end>
+            <factor>4</factor>
+        </motionLevel>
+        <motionLevel>
+            <level>3</level>
+            <motion_speed_start>36</motion_speed_start>
+            <motion_speed_end>45</motion_speed_end>
+            <factor>5</factor>
+        </motionLevel>
+        <motionLevel>
+            <level>4</level>
+            <motion_speed_start>45</motion_speed_start>
+            <motion_speed_end>10000</motion_speed_end>      <!--最高等级的motion_speed_end固定为10000，即运动速度大于该motion_speed_start的都认为采用这个策略-->
+            <factor>7</factor>
+        </motionLevel>
+    </trigger>
+    <trigger>
+        <lux_start>150</lux_start>                            <!--float类型:指定lux范围-->
+        <lux_end>200</lux_end>
+        <orig_exptime_start>0</orig_exptime_start>          <!--uint64类型:指定exptime范围-->
+        <orig_exptime_end>32000000000</orig_exptime_end>
+        <adrc_gain>10</adrc_gain>                           <!--float类型:无人脸时，大于该adrcGain则不进入调整曝光-->
+        <face_adrc_gain>10</face_adrc_gain>                 <!--float类型:有人脸时，大于该adrcGain则不进入调整曝光-->
+        <antibanding>1</antibanding>                        <!--uint类型:开关debanding预览算法，默认为开-->
+        <motionLevel>                                       <!--运动等级最多可划分6级，由tuning决定运动等级划分标准及每个等级缩短曝光比例-->
+            <level>1</level>                                <!--uint类型:当前运动等级-->
+            <motion_speed_start>12</motion_speed_start>      <!--float类型:当前等级的运动速度范围-->
+            <motion_speed_end>20</motion_speed_end>
+            <factor>3</factor>                              <!--float类型:曝光时间缩短n倍-->
+        </motionLevel>
+        <motionLevel>
+            <level>2</level>
+            <motion_speed_start>20</motion_speed_start>
+            <motion_speed_end>36</motion_speed_end>
+            <factor>4</factor>
+        </motionLevel>
+        <motionLevel>
+            <level>3</level>
+            <motion_speed_start>36</motion_speed_start>
+            <motion_speed_end>45</motion_speed_end>
+            <factor>5</factor>
+        </motionLevel>
+        <motionLevel>
+            <level>4</level>
+            <motion_speed_start>45</motion_speed_start>
+            <motion_speed_end>80</motion_speed_end>
+            <factor>7</factor>
+        </motionLevel>
+        <motionLevel>
+            <level>5</level>
+            <motion_speed_start>80</motion_speed_start>
+            <motion_speed_end>10000</motion_speed_end>      <!--最高等级的motion_speed_end固定为10000，即运动速度大于该motion_speed_start的都认为采用这个策略-->
+            <factor>10</factor>
+        </motionLevel>
+    </trigger>
+    <trigger>
+        <lux_start>200</lux_start>                            <!--float类型:指定lux范围-->
+        <lux_end>300</lux_end>
+        <orig_exptime_start>0</orig_exptime_start>          <!--uint64类型:指定exptime范围-->
+        <orig_exptime_end>32000000000</orig_exptime_end>
+        <adrc_gain>10</adrc_gain>                           <!--float类型:无人脸时，大于该adrcGain则不进入调整曝光-->
+        <face_adrc_gain>10</face_adrc_gain>                 <!--float类型:有人脸时，大于该adrcGain则不进入调整曝光-->
+        <antibanding>1</antibanding>                        <!--uint类型:开关debanding预览算法，默认为开-->
+        <motionLevel>                                       <!--运动等级最多可划分6级，由tuning决定运动等级划分标准及每个等级缩短曝光比例-->
+            <level>1</level>                                <!--uint类型:当前运动等级-->
+            <motion_speed_start>10</motion_speed_start>      <!--float类型:当前等级的运动速度范围-->
+            <motion_speed_end>20</motion_speed_end>
+            <factor>4</factor>                              <!--float类型:曝光时间缩短n倍-->
+        </motionLevel>
+        <motionLevel>
+            <level>2</level>
+            <motion_speed_start>20</motion_speed_start>
+            <motion_speed_end>36</motion_speed_end>
+            <factor>5</factor>
+        </motionLevel>
+        <motionLevel>
+            <level>3</level>
+            <motion_speed_start>36</motion_speed_start>
+            <motion_speed_end>45</motion_speed_end>
+            <factor>7</factor>
+        </motionLevel>
+        <motionLevel>
+            <level>4</level>
+            <motion_speed_start>45</motion_speed_start>
+            <motion_speed_end>10000</motion_speed_end>
+            <factor>8</factor>
+        </motionLevel>
+    </trigger>
+    <trigger>
+        <lux_start>300</lux_start>                            <!--float类型:指定lux范围-->
+        <lux_end>999</lux_end>
+        <orig_exptime_start>0</orig_exptime_start>          <!--uint64类型:指定exptime范围-->
+        <orig_exptime_end>32000000000</orig_exptime_end>
+        <adrc_gain>10</adrc_gain>                           <!--float类型:无人脸时，大于该adrcGain则不进入调整曝光-->
+        <face_adrc_gain>10</face_adrc_gain>                 <!--float类型:有人脸时，大于该adrcGain则不进入调整曝光-->
+        <antibanding>1</antibanding>                        <!--uint类型:开关debanding预览算法，默认为开-->
+        <motionLevel>                                       <!--运动等级最多可划分6级，由tuning决定运动等级划分标准及每个等级缩短曝光比例-->
+            <level>1</level>                                <!--uint类型:当前运动等级-->
+            <motion_speed_start>100000</motion_speed_start>      <!--float类型:当前等级的运动速度范围-->
+            <motion_speed_end>160000</motion_speed_end>
+            <factor>1</factor>                              <!--float类型:曝光时间缩短n倍-->
+        </motionLevel>
+    </trigger>
+</motion_params>

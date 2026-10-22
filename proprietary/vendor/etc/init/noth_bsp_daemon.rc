@@ -1,0 +1,40 @@
+on property:dev.bootcomplete=1
+    write dev/kmsg "start noth_bsp_daemon"
+    start noth_bsp_daemon
+
+service noth_bsp_daemon /vendor/bin/noth_bsp_daemon
+   class core
+   user system
+   group system
+   disabled
+   oneshot
+
+# Nothing/Bsp add for ARBOK-1450 to power consumption @{
+on property:sys.glyph.touch.mode=1
+    write /sys/class/aw_sensor/sensor_dev/touch_scanperiod 20
+
+on property:sys.glyph.touch.mode=0
+    write /sys/class/aw_sensor/sensor_dev/touch_scanperiod 100
+# @}
+
+# GLypyTouch Log control
+on property:sys.glyph.touch.debug_mode=1
+    write /sys/class/aw_sensor/sensor_dev/log_timer 50
+
+on property:sys.glyph.touch.debug_mode=0
+    write /sys/class/aw_sensor/sensor_dev/log_timer 0
+# @}
+
+# SensorException
+on property:sys.sensor.err_cnt.ois1=*
+    setprop persist.vendor.err_cnt.ois1 ${sys.sensor.err_cnt.ois1}
+
+on property:sys.sensor.err_cnt.ois2=*
+    setprop persist.vendor.err_cnt.ois2 ${sys.sensor.err_cnt.ois2}
+
+on property:sys.sensor.err_cnt.now=*
+    setprop persist.vendor.err_cnt.now ${sys.sensor.err_cnt.now}
+
+on property:sys.sensor.err_cnt.report=*
+    setprop vendor.nt.err_report ${sys.sensor.err_cnt.report}
+# @}

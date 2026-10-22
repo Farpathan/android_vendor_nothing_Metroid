@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<boost_config>
+    <!--CPU-->
+    <!-- cpu_little_freq="min_freq,max_freq" -->
+    <!-- cpu_little_online="min_online,max_online" -->
+    <!-- cpu_big_freq="min_freq,max_freq" -->
+    <!-- cpu_big_online="min_online,max_online" -->
+    <!-- cpu_prime_freq="min_freq,max_freq" -->
+    <!-- cpu_prime_online="min_online" -->
+     <!-- cpu_little 364800 441600 614400 748800 883200 979200 1075200 1190400 1286400 1401600 1516800 1632000 1785600 1900800 2016000  max online 4-->
+     <!-- cpu_big 480000 633600 787200 940800 1056000 1190400 1286400 1401600 1516800 1632000 1728000 1824000 1920000 2073600 2208000 2323200 2438400 2515200 2611200 2707200 2803200 2918400 3014400 max online 3-->
+     <!-- cpu_titanium 480000 633600 787200 940800 1056000 1190400 1286400 1401600 1516800 1632000 1728000 1824000 1920000 2073600 2208000 2323200 2438400 2515200 2611200 2707200 2803200 -->
+	 <!-- cpu_prime 480000 633600 787200 960000 1094400 1228800 1363200 1478400 1670400 1785600 1920000 2054400 2169600 2284800 2400000 2515200 2630400 2745600 2841600 2956800 max online 1-->
+     <!-- average current: 1489mA -->
+     <cpu_config level="1" cpu_little_freq="441,2016" cpu_big_freq="480,3014" cpu_titanium_freq="480,2803" cpu_prime_freq="480,3014"/>
+     <!-- average current: 1450mA -->
+     <cpu_config level="2" cpu_little_freq="441,2016" cpu_big_freq="480,2918" cpu_titanium_freq="480,2803" cpu_prime_freq="480,3014"/>
+     <!-- average current: 1412mA -->
+     <cpu_config level="3" cpu_little_freq="441,2016" cpu_big_freq="480,2918" cpu_titanium_freq="480,2707" cpu_prime_freq="480,3014"/>
+     <!-- average current: 1325mA -->
+     <cpu_config level="4" cpu_little_freq="441,2016" cpu_big_freq="480,2918" cpu_titanium_freq="480,2707" cpu_prime_freq="480,2841"/>
+     <!-- average current: 1287mA -->
+     <cpu_config level="5" cpu_little_freq="441,2016" cpu_big_freq="480,2918" cpu_titanium_freq="480,2707" cpu_prime_freq="480,2745"/>
+     <!-- average current: 1245mA -->
+     <cpu_config level="6" cpu_little_freq="441,1900" cpu_big_freq="480,2918" cpu_titanium_freq="480,2611" cpu_prime_freq="480,2745"/>
+     <!-- average current: 1196mA -->
+     <cpu_config level="7" cpu_little_freq="441,1900" cpu_big_freq="480,2803" cpu_titanium_freq="480,2611" cpu_prime_freq="480,2745"/>
+     <!-- average current: 1149mA -->
+     <cpu_config level="8" cpu_little_freq="441,1900" cpu_big_freq="480,2803" cpu_titanium_freq="480,2611" cpu_prime_freq="480,2630"/>
+     <!-- average current: 1095mA -->
+     <cpu_config level="9" cpu_little_freq="441,1900" cpu_big_freq="480,2707" cpu_titanium_freq="480,2611" cpu_prime_freq="480,2630"/>
+     <!-- average current: 1057mA -->
+     <cpu_config level="10" cpu_little_freq="441,1900" cpu_big_freq="480,2707" cpu_titanium_freq="480,2611" cpu_prime_freq="480,2515"/>
+     <!-- average current: 1018mA -->
+     <cpu_config level="11" cpu_little_freq="441,1900" cpu_big_freq="480,2611" cpu_titanium_freq="480,2611" cpu_prime_freq="480,2515"/>
+     <!-- average current: 978mA -->
+     <cpu_config level="12" cpu_little_freq="441,1900" cpu_big_freq="480,2515" cpu_titanium_freq="480,2611" cpu_prime_freq="480,2515"/>
+     <!-- average current: 937mA -->
+     <cpu_config level="13" cpu_little_freq="441,1785" cpu_big_freq="480,2515" cpu_titanium_freq="480,2515" cpu_prime_freq="480,2515"/>
+     <!-- average current: 891mA -->
+     <cpu_config level="14" cpu_little_freq="441,1785" cpu_big_freq="480,2438" cpu_titanium_freq="480,2438" cpu_prime_freq="480,2400"/>
+     <!-- average current: 836mA -->
+     <cpu_config level="15" cpu_little_freq="441,1785" cpu_big_freq="480,2438" cpu_titanium_freq="480,2438" cpu_prime_freq="480,2169"/>
+     <!-- average current: 794mA -->
+     <cpu_config level="16" cpu_little_freq="441,1785" cpu_big_freq="480,2323" cpu_titanium_freq="480,2323" cpu_prime_freq="480,2169"/>
+     <!-- average current: 741mA -->
+     <cpu_config level="17" cpu_little_freq="441,1785" cpu_big_freq="480,2323" cpu_titanium_freq="480,2208" cpu_prime_freq="480,2054"/>
+     <!-- average current: 690mA -->
+     <cpu_config level="18" cpu_little_freq="441,1516" cpu_big_freq="480,2208" cpu_titanium_freq="480,2208" cpu_prime_freq="480,2054"/>
+     <!-- average current: 637mA -->
+     <cpu_config level="19" cpu_little_freq="441,1516" cpu_big_freq="480,2208" cpu_titanium_freq="480,2073" cpu_prime_freq="480,1920"/>
+     <!-- average current: 583mA -->
+     <cpu_config level="20" cpu_little_freq="441,1516" cpu_big_freq="480,2073" cpu_titanium_freq="480,2073" cpu_prime_freq="480,1785"/>
+     <!-- average current: 543mA -->
+     <cpu_config level="21" cpu_little_freq="441,1516" cpu_big_freq="480,1920" cpu_titanium_freq="480,1920" cpu_prime_freq="480,1785"/>
+     <!-- average current: 494mA -->
+     <cpu_config level="22" cpu_little_freq="441,1516" cpu_big_freq="480,1728" cpu_titanium_freq="480,1728" cpu_prime_freq="480,1785"/>
+     <!-- average current: 440mA -->
+     <cpu_config level="23" cpu_little_freq="441,1516" cpu_big_freq="480,1516" cpu_titanium_freq="480,1516" cpu_prime_freq="480,1785"/>
+     <!-- average current: 385mA -->
+     <cpu_config level="24" cpu_little_freq="441,1286" cpu_big_freq="480,1401" cpu_titanium_freq="480,1401" cpu_prime_freq="480,1670"/>
+     <!-- average current: 343mA -->
+     <cpu_config level="25" cpu_little_freq="441,1286" cpu_big_freq="480,1286" cpu_titanium_freq="480,1286" cpu_prime_freq="480,1478"/>
+     <!-- average current: 294mA -->
+     <cpu_config level="26" cpu_little_freq="441,1075" cpu_big_freq="480,1190" cpu_titanium_freq="480,1190" cpu_prime_freq="480,1228"/>
+     <!-- average current: 261mA -->
+     <cpu_config level="27" cpu_little_freq="441,1075" cpu_big_freq="480,1056" cpu_titanium_freq="480,1056" cpu_prime_freq="480,1094"/>
+ 
+     <!--GPU-->
+     <!-- gpu="min_freq,max_freq" -->
+     <!-- 1150000000 1100000000 1050000000 937000000 873000000 763000000 688000000 644000000 510000000 362000000 264000000 -->
+     <gpu_config level="1" gpu="10,0"/>
+     <gpu_config level="2" gpu="10,1"/>
+     <gpu_config level="3" gpu="10,2"/>
+     <gpu_config level="4" gpu="10,3"/>
+     <gpu_config level="5" gpu="10,4"/>
+     <gpu_config level="6" gpu="10,5"/>
+     <gpu_config level="7" gpu="10,6"/>
+     <gpu_config level="8" gpu="10,7"/>
+     <gpu_config level="9" gpu="10,8"/>
+     <gpu_config level="10" gpu="10,9"/>
+     <gpu_config level="11" gpu="10,10"/>
+
+     <!-- must use decimal numbers -->
+     <!-- MPCTLV3_SCHED_BOOST -->
+     <boost_scenario id="1" name="ALL_BOOST" params="1086324736,1"/>
+     <!-- MPCTLV3_SCHED_BOOST -->
+     <boost_scenario id="2" name="TOPAPP_BOOST" params="1086324736,2"/>
+     <!--DEBUG-->
+     <!-- test_cpu and test_gpu only for debug, if set any value, -->
+     <test_cpu />
+     <test_gpu />
+ </boost_config>

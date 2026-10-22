@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Nio flicker Tuning Parameters Configuration -->
+<!-- Copyright(c) 2021 Nio China,Inc.  -->
+
+<flicker_params>
+    <!-- See https://nio.feishu.cn/docx/WK7ndoxP9o9QyAxtBj1cskWVn4f -->
+
+    <!-- 启用Flicker检测的uimode -->
+    <Enable>
+        <!-- normal photo -->
+        <UiMode>0x900A</UiMode>
+        <!-- motion mode -->
+        <UiMode>0x9012</UiMode>
+        <!-- video mode -->
+        <UiMode>0xF008</UiMode>
+
+        <!-- third-party app -->
+        <PackageName>com.whatsapp</PackageName>
+        <PackageName>com.instagram.android</PackageName>
+    </Enable>
+
+    <!-- 当前luxIndex大于maxLux, 则不进行flicker检测 -->
+    <!-- wide -->
+    <maxLux                       type="FLOAT"  cameraId="0">700</maxLux>
+    <!-- ultrawide -->
+    <maxLux                       type="FLOAT"  cameraId="1">700</maxLux>
+    <!-- tele -->
+    <maxLux                       type="FLOAT"  cameraId="2">600</maxLux>
+
+    <!-- 当前曝光时间大于maxExpTime, 则不进行flicker检测-->
+    <maxExpTime                   type="UINT64" length="1">100000000</maxExpTime>
+
+    <!-- 判断场景是否变化: 当帧lux变化大于luxChangeThresold，且变化超过luxChangeCount帧,
+    则会认为当前环境变化了，调整算法内判断直流光源的阈值 -->
+    <luxChangeThresold            type="FLOAT"  length="1">20</luxChangeThresold>
+    <luxChangeCount               type="UINT"   length="1">10</luxChangeCount>
+
+    <!-- 切换到周期性光源场景所需的帧数 -->
+    <stableCount                  type="UINT"   length="1">9</stableCount>
+
+    <!-- DC:直流光源。从周期性光源场景切换到直流光源场景所需的帧数 -->
+    <DCStableCount                type="UINT"   length="1">17</DCStableCount>
+
+    <!-- 最小和最大检测频率-->
+    <minFreq                      type="UINT"   length="1">59</minFreq>
+    <maxFreq                      type="UINT"   length="1">500</maxFreq>
+
+    <!-- 足够引起banding的频率的幅值 -->
+    <sufficientAmpForBanding      type="UINT"   length="1">35</sufficientAmpForBanding>
+
+    <!-- 不同亮度采用不同的阈值 -->
+    <!-- 15~100000: 正常场景 -->
+    <AvgRawRange>
+        <minAvgRawValue              type="UINT"    length="1">30</minAvgRawValue>
+        <maxAvgRawValue              type="UINT"    length="1">100000</maxAvgRawValue>
+        <!-- 频率幅值与直流分量幅值的比值，若小于该值，则频率无效 -->
+        <minDCAmpRatio                type="FLOAT"  length="1">0.0045</minDCAmpRatio>
+        <!-- 频率幅值与所有频率幅值的平均值的比值，若小于该值，则频率无效 -->
+        <minAvgAmpRatio               type="FLOAT"  length="1">2</minAvgAmpRatio>
+        <!-- 当前频率的谐波的幅值和与直流分量幅值的比值，若大于该值，则当前为周期性场景 -->
+        <minHarmonicsAmpSumRatioWithDCAmp  type="FLOAT"  length="1">0.009</minHarmonicsAmpSumRatioWithDCAmp>
+    </AvgRawRange>
+
+    <!-- 15-150: 略暗场景, 阈值介于正常场景和极暗场景之间-->
+    <AvgRawRange>
+        <minAvgRawValue              type="UINT"    length="1">10</minAvgRawValue>
+        <maxAvgRawValue              type="UINT"    length="1">30</maxAvgRawValue>
+        <!-- 频率幅值与直流分量幅值的比值，若小于该值，则频率无效 -->
+        <minDCAmpRatio                type="FLOAT"  length="1">0.04</minDCAmpRatio>
+        <!-- 频率幅值与所有频率幅值的平均值的比值，若小于该值，则频率无效 -->
+        <minAvgAmpRatio               type="FLOAT"  length="1">2</minAvgAmpRatio>
+        <!-- 当前频率的谐波的幅值和与直流分量幅值的比值，若大于该值，则当前为周期性场景 -->
+        <minHarmonicsAmpSumRatioWithDCAmp  type="FLOAT"  length="1">0.08</minHarmonicsAmpSumRatioWithDCAmp>
+    </AvgRawRange>
+
+    <!-- 0 ~ 15: 极暗场景，这种场景噪点会增多，影响判断，因此相关阈值需要比正常亮度更严格 -->
+    <AvgRawRange>
+        <minAvgRawValue              type="UINT"    length="1">0</minAvgRawValue>
+        <maxAvgRawValue              type="UINT"    length="1">10</maxAvgRawValue>
+        <!-- 频率幅值与直流分量幅值的比值，若小于该值，则频率无效 -->
+        <minDCAmpRatio                type="FLOAT"  length="1">0.1</minDCAmpRatio>
+        <!-- 频率幅值与所有频率幅值的平均值的比值，若小于该值，则频率无效 -->
+        <minAvgAmpRatio               type="FLOAT"  length="1">3</minAvgAmpRatio>
+        <!-- 当前频率的谐波的幅值和与直流分量幅值的比值，若大于该值，则当前为周期性场景 -->
+        <minHarmonicsAmpSumRatioWithDCAmp  type="FLOAT"  length="1">0.2</minHarmonicsAmpSumRatioWithDCAmp>
+    </AvgRawRange>
+
+    <!-- 判断是否为谐波：与当前频率的整数倍的差值的绝对值不大于该值 -->
+    <harmonicsFreqTolerance       type="FLOAT"  length="1">15</harmonicsFreqTolerance>
+
+    <!-- 判断是否为相似频率：与当前频率的差值的绝对值不大于该值 -->
+    <approximateFreqTolerance          type="FLOAT"  length="1">15</approximateFreqTolerance>
+
+    <!-- 若第二大有效频率与当前频率相似，且与第一大有效频率幅值小于该值，则使用第二大频率 -->
+    <approximateAmpRatioTolerance      type="FLOAT"  length="1">3</approximateAmpRatioTolerance>
+
+    <!-- 若高通AFD算法输出的可信度大于minAFDRollingConfidence，且flicker能量大于minAFDRollingEnergyRatio，则当前为周期性场景 -->
+    <minAFDRollingConfidence           type="FLOAT"  length="1">0</minAFDRollingConfidence>
+    <minAFDRollingEnergyRatio          type="FLOAT"  length="1">0</minAFDRollingEnergyRatio>
+
+    <!-- tof干扰距离：若小于该距离，tof发出激光的频率会干扰到当前检测，需要排除tof发出激光的频率 -->
+    <tofInterferenceDistance           type="UINT"   length="1">100</tofInterferenceDistance>
+</flicker_params>

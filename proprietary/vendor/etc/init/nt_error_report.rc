@@ -1,0 +1,13 @@
+service nt_error_report /vendor/bin/nt_error_report
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+    priority 10
+
+on property:sys.boot_completed=1
+    start nt_error_report
+
+on property:sys.boot_completed=1
+    exec_background  - root system  -- /vendor/bin/nt_error_report_prop_event

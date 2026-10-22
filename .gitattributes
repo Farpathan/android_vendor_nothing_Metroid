@@ -1,0 +1,7 @@
+/proprietary/vendor/etc/camera/arc_ghz_data2.bin filter=lfs diff=lfs merge=lfs -text
+/proprietary/vendor/etc/whisper/decoder_model_htp.bin filter=lfs diff=lfs merge=lfs -text
+/proprietary/vendor/etc/whisper/encoder_model_htp.bin filter=lfs diff=lfs merge=lfs -text
+/proprietary/vendor/lib64/libarcsoft_tfp_hdr.so filter=lfs diff=lfs merge=lfs -text
+/proprietary/vendor/lib64/libarcsoft_tfp_motioncapture.so filter=lfs diff=lfs merge=lfs -text
+/proprietary/vendor/lib64/libarcsoft_tfp_super_resolution.so filter=lfs diff=lfs merge=lfs -text
+/proprietary/vendor/lib64/libhyperzoom.arcsoft.so filter=lfs diff=lfs merge=lfs -text

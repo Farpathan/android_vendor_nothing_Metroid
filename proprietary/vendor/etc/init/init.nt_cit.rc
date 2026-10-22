@@ -1,0 +1,150 @@
+#spencer.chen add for SFDC Calibration TFT-4439
+service vendor.sfdc_param_calibration /vendor/bin/sfdc_param_calibration
+   class core
+   user system
+   group system
+   disabled
+   oneshot
+
+on property:sys.vndsfdc_param_calibration=start
+   start vendor.sfdc_param_calibration
+
+on property:persist.vendor.sfdc.result=*
+  setprop sys.cit.sfdc.result ${persist.vendor.sfdc.result}
+
+#spencer.chen add cpufreq scaling_governor control for SFDC Calibration TFT-4439
+on property:sys.vnd_scaling_governor=walt
+  write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor walt
+  write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor walt
+  write /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor walt
+
+on property:sys.vnd_scaling_governor=performance
+  write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor performance
+  write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor performance
+  write /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor performance
+
+
+# spencer add for A+G sensor calibration ARBOK-1123 @{
+service vendor.ssc_drva_test.accel /vendor/bin/ssc_drva_test -sensor=accel -factory_test=2 -duration=3
+   class core
+   user system
+   group system
+   disabled
+   oneshot
+
+service vendor.ssc_drva_test.gyro /vendor/bin/ssc_drva_test -sensor=gyro -factory_test=2 -duration=3
+   class core
+   user system
+   group system
+   disabled
+   oneshot
+
+on property:sys.check_sensor.file=check
+   chmod 0666 /mnt/vendor/persist/sensors/registry/registry/qrd_stk6b1x_0.json.stk6b1x_0_platform.als.fac_cal
+   chmod 0666 /mnt/vendor/persist/sensors/registry/registry/qrd_stk6b1x_0.json.stk6b1x_0_platform.ps.fac_cal
+
+on property:sys.ssc_drva_test.accel=start
+   start vendor.ssc_drva_test.accel
+
+on property:sys.ssc_drva_test.accel=stop
+   stop vendor.ssc_drva_test.accel
+
+
+on property:sys.ssc_drva_test.gyro=start
+   start vendor.ssc_drva_test.gyro
+
+on property:sys.ssc_drva_test.gyro=stop
+   stop vendor.ssc_drva_test.gyro
+
+on property:sys.ssc_drva_test.accel=copy
+   copy /mnt/vendor/persist/sensors/registry/registry/bonito_qrd_lsm6dsv_0.json.lsm6dsv_0_platform.accel.fac_cal.bias /data/config/bonito_qrd_lsm6dsv_0.json.lsm6dsv_0_platform.accel.fac_cal.bias
+   chown system system data/config/bonito_qrd_lsm6dsv_0.json.lsm6dsv_0_platform.accel.fac_cal.bias
+   chmod 0444 data/config/bonito_qrd_lsm6dsv_0.json.lsm6dsv_0_platform.accel.fac_cal.bias
+
+on property:sys.ssc_drva_test.gyro=copy
+   copy /mnt/vendor/persist/sensors/registry/registry/bonito_qrd_lsm6dsv_0.json.lsm6dsv_0_platform.gyro.fac_cal.bias /data/config/bonito_qrd_lsm6dsv_0.json.lsm6dsv_0_platform.gyro.fac_cal.bias
+   chown system system data/config/bonito_qrd_lsm6dsv_0.json.lsm6dsv_0_platform.gyro.fac_cal.bias
+   chmod 0444 data/config/bonito_qrd_lsm6dsv_0.json.lsm6dsv_0_platform.gyro.fac_cal.bias
+# @}
+
+# spencer add for sar sensor calibration ARBOK-1123 @{
+service vendor.ssc_drva_test.sar /vendor/bin/ssc_drva_test -sensor=sar0 -factory_test=2 -duration=3
+   class core
+   user system
+   group system
+   disabled
+   oneshot
+
+on property:sys.ssc_drva_test.sar=start
+   start vendor.ssc_drva_test.sar
+
+on property:sys.ssc_drva_test.sar=stop
+   stop vendor.ssc_drva_test.sar
+# @}
+
+#spencer.chen copy from byd/configs-sys/init.factoryflag.rc
+
+#add for cit PSN FSN color
+on post-fs-data
+    mkdir /data/config 0777 root system
+    chmod 0644 /mnt/vendor/persist/FSN.txt
+    copy /mnt/vendor/persist/FSN.txt /data/config/FSN.txt
+    chmod 0444 /data/config/FSN.txt
+    chown system system /data/config/FSN.txt
+    chmod 0644 /mnt/vendor/persist/PSN.txt
+    copy /mnt/vendor/persist/PSN.txt /data/config/PSN.txt
+    chmod 0444 /data/config/PSN.txt
+    chown system system /data/config/PSN.txt
+    copy /mnt/vendor/persist/color /data/config/color
+    chmod 0666 /data/config/color
+    chown system system /data/config/color
+
+on property:sys.boot_completed=1
+    setprop persist.sys.cit.imei.init ""
+    setprop persist.sys.cit.spk ""
+    setprop persist.sys.cit.mic ""
+    setprop persist.sys.cit.odm_mmi_test ""
+
+#spencer.chen add by zyq for cit audio
+on property:persist.sys.cit.spk=*
+  setprop vendor.audio.hal.output.spk ${persist.sys.cit.spk}
+
+on property:persist.sys.cit.spk=""
+  setprop vendor.audio.hal.output.spk ""
+
+on property:persist.sys.cit.mic=*
+  setprop vendor.audio.hal.input.mic ${persist.sys.cit.mic}
+
+on property:persist.sys.cit.mic=""
+  setprop vendor.audio.hal.input.mic ""
+
+on property:persist.sys.cit.odm_mmi_test=*
+  setprop vendor.audio.hal.odm_mmi_test ${persist.sys.cit.odm_mmi_test}
+
+on property:persist.sys.cit.odm_mmi_test=""
+  setprop vendor.audio.hal.odm_mmi_test ""
+
+# add by zyq for cit panelID
+    restorecon /sys/panel_feature/panel_id1
+    restorecon /sys/panel_feature/panel_id2
+    restorecon /sys/panel_feature/panel_id3
+    restorecon /sys/panel_feature/fp_status
+
+# add by wqj for cit pd/otg
+on property:persist.sys.cit.restorecon=1
+    restorecon /sys/class/qcom-battery/typec_cc_orientation
+    restorecon /sys/class/qcom-battery/charge_pump_enable
+    restorecon /sys/class/qcom-battery/usb_real_type
+    restorecon /sys/class/qcom-battery/wireless_boost_en
+    restorecon /sys/class/qcom-battery/wls_reverse_status
+    restorecon /sys/class/qcom-battery/wls_curr_tx
+    restorecon /sys/class/qcom-battery/wls_volt_tx
+    restorecon /sys/class/qcom-battery/wireless_fw_version
+    restorecon /sys/class/qcom-battery/wls_st38_data
+    restorecon /sys/class/qcom-battery/wls_st38_reg
+
+# nick add for cit Touch panel version && Tp apk
+on property:sys.boot_completed=1
+    chmod 0666 /dev/gtp_tools
+    restorecon /sys/devices/platform/goodix_ts.0/driver_info
+    restorecon /sys/devices/platform/goodix_ts.0/fw_bin_info

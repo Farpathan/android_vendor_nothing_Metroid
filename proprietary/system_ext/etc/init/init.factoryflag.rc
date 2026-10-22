@@ -1,0 +1,70 @@
+# add for cit PSN FSN color
+on post-fs-data
+    mkdir /data/config 0777 root system
+    copy /mnt/vendor/persist/FSN.txt /data/config/FSN.txt
+    chmod 0444 /data/config/FSN.txt
+    chown system system /data/config/FSN.txt
+    copy /mnt/vendor/persist/PSN.txt /data/config/PSN.txt
+    chmod 0444 /data/config/PSN.txt
+    chown system system /data/config/PSN.txt
+    copy /mnt/vendor/persist/color /data/config/color
+    chmod 0666 /data/config/color
+    chown system system /data/config/color
+
+# CIT Audio
+on property:persist.sys.cit.spk=*
+  setprop vendor.audio.hal.output.spk ${persist.sys.cit.spk}
+
+on property:persist.sys.cit.spk=""
+  setprop vendor.audio.hal.output.spk ""
+
+on property:persist.sys.cit.mic=*
+  setprop vendor.audio.hal.input.mic ${persist.sys.cit.mic}
+
+on property:persist.sys.cit.mic=""
+  setprop vendor.audio.hal.input.mic ""
+
+# A+G sensor calibration
+on property:sys.ssc_drva_test.accel=copy
+   copy /mnt/vendor/persist/sensors/registry/registry/bonito_qrd_lsm6dsv_0.json.lsm6dsv_0_platform.accel.fac_cal.bias /data/config/bonito_qrd_lsm6dsv_0.json.lsm6dsv_0_platform.accel.fac_cal.bias
+   chown system system /data/config/bonito_qrd_lsm6dsv_0.json.lsm6dsv_0_platform.accel.fac_cal.bias
+   chmod 0444 /data/config/bonito_qrd_lsm6dsv_0.json.lsm6dsv_0_platform.accel.fac_cal.bias
+
+on property:sys.ssc_drva_test.gyro=copy
+   copy /mnt/vendor/persist/sensors/registry/registry/bonito_qrd_lsm6dsv_0.json.lsm6dsv_0_platform.gyro.fac_cal.bias /data/config/bonito_qrd_lsm6dsv_0.json.lsm6dsv_0_platform.gyro.fac_cal.bias
+   chown system system /data/config/bonito_qrd_lsm6dsv_0.json.lsm6dsv_0_platform.gyro.fac_cal.bias
+   chmod 0444 /data/config/bonito_qrd_lsm6dsv_0.json.lsm6dsv_0_platform.gyro.fac_cal.bias
+
+# front L+ back L sensor calibration
+on property:sys.ssc_drva_test.als=copy
+   copy /mnt/vendor/persist/sensors/registry/registry/bonito_qrd_stk6a2x_0.json.stk6a2x_0_platform.als.fac_cal /data/config/bonito_qrd_stk6a2x_0.json.stk6a2x_0_platform.als.fac_cal
+   chown system system /data/config/bonito_qrd_stk6a2x_0.json.stk6a2x_0_platform.als.fac_cal
+   chmod 0444 /data/config/bonito_qrd_stk6a2x_0.json.stk6a2x_0_platform.als.fac_cal
+
+# haptic calibration
+on property:sys.cali_data.haptic=copy
+    chmod 0444 /mnt/vendor/persist/haptic/cali_data
+    copy /mnt/vendor/persist/haptic/cali_data /data/config/haptics_cali_data
+    chown system system /data/config/haptics_cali_data
+    chmod 0444 /data/config/haptics_cali_data
+
+# Touch panel version && Tp apk
+on property:sys.boot_completed=1
+    chmod 0666 /dev/gtp_tools
+    restorecon /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi4/spi4.0/fts_driver_info
+    restorecon /sys/devices/platform/soc/ac0000.qcom,qupv3_1_geni_se/a90000.spi/spi_master/spi4/spi4.0/fts_fw_version
+
+on property:persist.sys.cit.restorecon=1
+    restorecon /sys/class/qcom-battery/typec_cc_orientation
+    restorecon /sys/class/qcom-battery/charge_pump_enable
+    restorecon /sys/class/qcom-battery/usb_real_type
+    restorecon /sys/class/qcom-battery/wireless_boost_en
+    restorecon /sys/class/qcom-battery/wls_reverse_status
+    restorecon /sys/class/qcom-battery/wls_curr_tx
+    restorecon /sys/class/qcom-battery/wls_volt_tx
+    restorecon /sys/class/qcom-battery/wireless_fw_version
+    restorecon /sys/class/qcom-battery/wls_st38_data
+    restorecon /sys/class/qcom-battery/wls_st38_reg
+    restorecon /sys/panel_feature/panel_id1
+    restorecon /sys/panel_feature/panel_id2 
+    restorecon /sys/panel_feature/panel_id3

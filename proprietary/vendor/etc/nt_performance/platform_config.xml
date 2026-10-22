@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIGTABLE>
+<!-- cpuset default restore -->
+    <!--ta top-app, fg foreground, bg background, sbg system-background, rest restricted, ntfg nt_foreground, dex dex2oat, camdaemon camera-daemon-->
+    <CONFIG name="ta" value="0-7"/>
+    <CONFIG name="fg" value="0-7"/>
+    <CONFIG name="bg" value="0-1,5-6"/>
+    <CONFIG name="sbg" value="0-1,5-6"/>
+    <CONFIG name="rest" value="0-7"/>
+
+    <!-- ntfg inputboost -->
+    <CONFIG name="ntfg_input" value="0-1,5-6"/>
+    <CONFIG name="dex_input" value="0-1,5-6"/>
+    <CONFIG name="bg_input" value="0-1,5"/>
+   <CONFIG name="dex_restore_threads" value="8"/>
+
+    <!-- sf affinity -->
+    <!-- 10011100 -->
+    <CONFIG name="sf_affinity" value="156"/>
+</CONFIGTABLE>

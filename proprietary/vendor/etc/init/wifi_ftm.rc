@@ -1,0 +1,29 @@
+service ftmdaemon /vendor/bin/ftmdaemon -n
+    class main
+    user root
+    group root
+    disabled
+    oneshot
+
+service btftmdaemon /vendor/bin/ftmdaemon -n -dd
+    class main
+    user root
+    group root
+    disabled
+    oneshot
+
+on property:vendor.wlan.engmode=true
+    ifup wlan0
+    write ${vendor.wlan.con.path} 5
+    start ftmdaemon
+
+
+on property:vendor.wlan.engmode=false
+   stop ftmdaemon
+   write ${vendor.wlan.con.path} 0
+
+on property:vendor.bt.engmode=true
+   start btftmdaemon
+
+on property:vendor.bt.engmode=false
+   stop btftmdaemon

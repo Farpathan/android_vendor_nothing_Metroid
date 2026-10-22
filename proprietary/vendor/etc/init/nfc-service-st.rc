@@ -1,0 +1,8 @@
+service nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service-st
+    class hal
+    user nfc
+    group nfc
+    disabled
+
+on property:persist.vendor.nfc_getcplc_completed=1
+   start nfc_hal_service

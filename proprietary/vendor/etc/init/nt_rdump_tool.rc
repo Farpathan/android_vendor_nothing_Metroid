@@ -1,0 +1,19 @@
+# Create /data/vendor/nt_rdump for store preallocate file/fulldump.bin
+on post-fs-data
+    mkdir /data/vendor/nt_rdump 0777 root root encryption=None
+    restorecon -r /data/vendor/nt_rdump
+
+# If dump type setup to fulldump and enable persist.vendor.rdump.enable, call the nt_rdump_tool for creating
+on property:sys.boot_completed=1 && property:persist.vendor.debug_policy=fulldump && property:persist.vendor.rdump.enable=1
+    setprop persist.vendor.rdump.status ""
+    setprop persist.vendor.rdump.retry_count 0
+    exec_background /vendor/bin/nt_rdump_tool nt_rdump_run
+
+# If nt_rdump_tool setup persist.vendor.rdump.status as need_retry, execute again.
+on property:persist.vendor.debug_policy=fulldump && property:persist.vendor.rdump.status=need_retry
+    exec_background /vendor/bin/nt_rdump_tool nt_rdump_run
+
+# Using for if OTA to MP/OBT version, delete preallocate file/fulldump.bin when boot complete.
+# Or switching off the persist.vendor.rdump.enable, doing delete ramdump files.
+on property:sys.boot_completed=1 && property:persist.vendor.rdump.enable=0
+    exec_background /vendor/bin/nt_rdump_tool nt_rdump_remove

@@ -1,0 +1,42 @@
+# Setup oem_sec_boot
+on post-fs-data
+exec /vendor/bin/setup_oem_sec_boot.sh
+
+# For booting/rebooting case
+on early-boot && property:persist.vendor.debug_policy=fulldump && property:persist.vendor.debug_policy.ready=1 && property:vendor.oem_sec_boot=2
+    write /sys/kernel/dload/dload_mode full
+    write /sys/kernel/dload/emmc_dload 0
+
+on early-boot && property:persist.vendor.debug_policy=fulldump && property:persist.vendor.debug_policy.ready=1 && property:vendor.oem_sec_boot=1
+    write /sys/kernel/dload/dload_mode full
+    write /sys/kernel/dload/emmc_dload 0
+
+on early-boot && property:persist.vendor.debug_policy=fulldump && property:persist.vendor.debug_policy.ready=1 && property:vendor.oem_sec_boot=0
+    write /sys/kernel/dload/dload_mode full
+    write /sys/kernel/dload/emmc_dload 1
+
+on early-boot && property:persist.vendor.debug_policy=minidump && property:persist.vendor.debug_policy.ready=1
+    write /sys/kernel/dload/dload_mode mini
+    write /sys/kernel/dload/emmc_dload 1
+# End for booting/rebooting device
+
+# For changing debug_policy
+on property:persist.vendor.debug_policy=fulldump && property:persist.vendor.debug_policy.ready=0 && property:vendor.oem_sec_boot=2
+    exec /vendor/bin/load_apdp.sh /vendor/etc/debug_policy/apdp_fulldump_PROD.mbn fulldump
+    write /sys/kernel/dload/dload_mode full
+    write /sys/kernel/dload/emmc_dload 0
+
+on property:persist.vendor.debug_policy=fulldump && property:persist.vendor.debug_policy.ready=0 && property:vendor.oem_sec_boot=1
+    exec /vendor/bin/load_apdp.sh /vendor/etc/debug_policy/apdp_fulldump_DEV.mbn fulldump
+    write /sys/kernel/dload/dload_mode full
+    write /sys/kernel/dload/emmc_dload 0
+
+on property:persist.vendor.debug_policy=fulldump && property:persist.vendor.debug_policy.ready=0 && property:vendor.oem_sec_boot=0
+    exec /vendor/bin/load_apdp.sh /vendor/etc/debug_policy/apdp_fulldump_DEV.mbn fulldump
+    write /sys/kernel/dload/dload_mode full
+    write /sys/kernel/dload/emmc_dload 1
+
+on property:persist.vendor.debug_policy=minidump && property:persist.vendor.debug_policy.ready=0
+    exec /vendor/bin/load_apdp.sh /vendor/etc/debug_policy/apdp_minidump.mbn minidump
+    write /sys/kernel/dload/dload_mode mini
+    write /sys/kernel/dload/emmc_dload 1

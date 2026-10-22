@@ -1,0 +1,14 @@
+on property:persist.sys.nt_task_io_enable=0
+    write /proc/nt_task_stats/task_io_stats "0"
+
+on property:persist.sys.nt_task_io_enable=1
+    write /proc/nt_task_stats/task_io_stats "1"
+
+on property:persist.sys.nt_task_io_threshold=*
+    write /proc/nt_task_stats/task_record_threshold ${persist.sys.nt_task_io_threshold}
+
+on property:persist.sys.nt_task_io_schedule_period=*
+    write /proc/nt_task_stats/task_schedule_period ${persist.sys.nt_task_io_schedule_period}
+
+on property:persist.sys.nt_task_io_debug_log_enable=*
+    write proc/nt_task_stats/debug_log_enable ${persist.sys.nt_task_io_debug_log_enable}
