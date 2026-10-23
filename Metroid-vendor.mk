@@ -390,6 +390,7 @@ PRODUCT_COPY_FILES += \
     vendor/nothing/Metroid/proprietary/system_ext/framework/vendor.qti.latency-V2.1-java.jar.fsv_meta:$(TARGET_COPY_OUT_SYSTEM_EXT)/framework/vendor.qti.latency-V2.1-java.jar.fsv_meta \
     vendor/nothing/Metroid/proprietary/system_ext/framework/vendor.qti.latency-V2.2-java.jar.fsv_meta:$(TARGET_COPY_OUT_SYSTEM_EXT)/framework/vendor.qti.latency-V2.2-java.jar.fsv_meta \
     vendor/nothing/Metroid/proprietary/system_ext/framework/vendor.qti.latencyaidlservice-V1-java.jar.fsv_meta:$(TARGET_COPY_OUT_SYSTEM_EXT)/framework/vendor.qti.latencyaidlservice-V1-java.jar.fsv_meta \
+    vendor/nothing/Metroid/proprietary/system_ext/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar.fsv_meta:$(TARGET_COPY_OUT_SYSTEM_EXT)/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar.fsv_meta \
     vendor/nothing/Metroid/proprietary/vendor/etc/ASR_binary/Whisper/libQnnHtpV79Skel.so:$(TARGET_COPY_OUT_VENDOR)/etc/ASR_binary/Whisper/libQnnHtpV79Skel.so \
     vendor/nothing/Metroid/proprietary/vendor/etc/ASR_binary/Whisper/speech_float.eai:$(TARGET_COPY_OUT_VENDOR)/etc/ASR_binary/Whisper/speech_float.eai \
     vendor/nothing/Metroid/proprietary/vendor/etc/Diag.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/Diag.cfg \
@@ -3672,8 +3673,6 @@ PRODUCT_PACKAGES += \
     extphonelib \
     nt-service-wifi \
     nt-telephony-common \
-    vendor.qti.hardware.sensorscalibrate-V1.0-java.odex \
-    vendor.qti.hardware.sensorscalibrate-V1.0-java.vdex \
     qcrilhook \
     qmapbridge \
     qti-telephony-common \
@@ -3737,7 +3736,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.mwqemadapter-V1.0-java \
     vendor.qti.hardware.mwqemadapteraidlservice-V1-java \
     vendor.qti.hardware.sensorscalibrate-V1.0-java \
-    vendor.qti.hardware.sensorscalibrate-V1.0-java.jar \
     vendor.qti.hardware.slmadapter-V1.0-java \
     vendor.qti.hardware.wigig.netperftuner-V1.0-java \
     vendor.qti.hardware.wigig.supptunnel-V1.0-java \

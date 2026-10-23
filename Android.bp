@@ -31082,6 +31082,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libqtigefar",
+    check_elf_files: false,
     owner: "nothing",
     strip: {
         none: true,
