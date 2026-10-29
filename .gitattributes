@@ -1,0 +1,17 @@
+proprietary/vendor/etc/camera/arc_ghz_data2.bin filter=lfs diff=lfs merge=lfs -text
+proprietary/vendor/etc/camera/arc_ghz_data3.bin filter=lfs diff=lfs merge=lfs -text
+proprietary/vendor/etc/whisper/decoder_model_htp.bin filter=lfs diff=lfs merge=lfs -text
+proprietary/vendor/etc/whisper/encoder_model_htp.bin filter=lfs diff=lfs merge=lfs -text
+proprietary/vendor/lib64/libaipasserbysegmentation.arcsoft.so filter=lfs diff=lfs merge=lfs -text
+proprietary/vendor/lib64/libarcsoft_Anti_EyeGlass_Reflection.so filter=lfs diff=lfs merge=lfs -text
+proprietary/vendor/lib64/libarcsoft_Anti_Glass_Reflection.so filter=lfs diff=lfs merge=lfs -text
+proprietary/vendor/lib64/libarcsoft_dualcam_refocus_image.so filter=lfs diff=lfs merge=lfs -text
+proprietary/vendor/lib64/libarcsoft_tfp_hdr.so filter=lfs diff=lfs merge=lfs -text
+proprietary/vendor/lib64/libarcsoft_tfp_hdr_front.so filter=lfs diff=lfs merge=lfs -text
+proprietary/vendor/lib64/libarcsoft_tfp_motioncapture.so filter=lfs diff=lfs merge=lfs -text
+proprietary/vendor/lib64/libarcsoft_tfp_super_resolution.so filter=lfs diff=lfs merge=lfs -text
+proprietary/vendor/lib64/libflare_reduction.arcsoft.so filter=lfs diff=lfs merge=lfs -text
+proprietary/vendor/lib64/libhyperzoom.arcsoft.so filter=lfs diff=lfs merge=lfs -text
+proprietary/vendor/lib64/libscenesegmentation.arcsoft.so filter=lfs diff=lfs merge=lfs -text
+proprietary/vendor/lib64/libstfaceunlockppl.so filter=lfs diff=lfs merge=lfs -text
+proprietary/vendor/lib64/rfs/dsp/libvpt_action_recognition.so filter=lfs diff=lfs merge=lfs -text
