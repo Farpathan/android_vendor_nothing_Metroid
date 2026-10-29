@@ -1,0 +1,47 @@
+[
+    {
+		"scene_name": "config",
+		"front_lux_thresh":380
+		
+    },
+    {
+    "scene_name": "front_light",
+    "scene_config": {
+					"beta": 0.4,
+					"mouth": 0.72,
+					"eye": 0.72,
+					"eyebrow": 0.72,
+					"blend_weight_border": 0.55,
+					"smoothness": 1,
+					"blend_weight_eyebrow": 0.95,
+					"blend_weight_eye": 0.9,
+					"blend_weight_mouth": 1,
+					"blend_weight_face": 0.9,
+					"blend_weight_jaw": 0.8,
+					"blend_weight_hair": 0.9,
+					"quality_level": 0,
+					"iso_thres": 20000,
+					"extend": "L2c8My41CyAsMC4mJhonJyAMMTwxMDA8Ixo2Pic9MBomMzY6O2ducnJ9Zml0cCo3Cy01OzAMNikxPCYMMCAgMys/dn90Y25zdi0wMTA8JGducjlxPCE3IC0jCyA6MyA/MWducnJ/dGc8NiEhOzULOh0jNSELICMnPSp2aGJjeGV2OiYwJiokDTEwOzcxDTY7JiAncHhzZGtnfmJxPCE3IC0jCzILIiM3Czc1Jis8dn90Ym5zdi0wMTA8JBojOyYnPBogOjA2J2ducnFjZDh4cmA/NSswPyMhPxo7MSEMMiw4JichCyw5NR0gIScLMC42OiELICMnPSp2aGJieGV2Py0mIC0LMC0hMCAmDTIyMBomMzY6O2ducnJ9bGl0cC88ITE8DTE7NSExDSE/PTULJCM/ISB2aGJjenF4cmA9OywnNx0yODU8M2BpdHR4cmA9OywnNx0gNyomNx0nPDcxIWBpdHV6YW5zdis7OzE2CzY9KCcMIC0mNzFxbmVnYnJ/dGc6PTA+NSkLNCMwMRo2PToMNiogJi0+CyoyNDE2IBomMzY6O2ducm9jenR4cmA9Ozc5My4MMiQ3Nx0xOz0LJi0jCyoyNDE2IBomMzY6O2ducm9jend4cmA9Ozc5My4MMiQ3NyA8LBokMyYMJiQgOy1xbmVlfHNieGV2IzcyOCwgK2BpdD52MyY5ITYgDSA/MSswDTU2PSI8JmBpdHZ4cmAiISQ4OzYqCzE8ICcgdn90CXJ9YXB4cnN9ZHB4cnZ/dHV6am5zZWthZ25zZ2tmZ25zZWtkZ25zZWttfmJgenQJL25zdjAnNx07NSwmDS8yJy52aGJieGV2JzE2Cy01PiQMMT02PjchCzYhMB02LSA2IC0kdn90Y25zdjAnNx07MBo1NiYMOio9ISdxbmVlfmJxITYxDSo3Cy01OzAMNikxPCZxbmVlfmJxITYxDSo3Cy01OzAMNikxPCYMMCAgMys/dn90Y25zdjAnNx07MBo+MzUMNikxPCZxbmVlfmJxITYxDSo3Cyk9JidxbmVlfmJxITYxDSo3Cyg7JzY7CyAwNSdxbmVlfmJxITYxDSo3Cyg7JzY7CzY8MyY2Cyc4Nyw3dn90Ym5zdjAnNx07MBo6PTEmNho5PSY2OBowNzYyPSkLPSQMMiQ3N2BpdHR4cmAmJyALPiM9MCg1ICkMOyY3DTAyICw7DSQ6ODExIB06OSJ2aGJieGV2JzE2CzYkNyE6NSkLICcwIGducnMu"
+				}
+    },
+	{
+    "scene_name": "front_dark",
+    "scene_config": {
+	                "beta": 0.4,
+					"mouth": 0.3,
+					"eye": 0.3,
+					"eyebrow": 0.4,
+					"blend_weight_border": 0.8,
+					"smoothness": 0.97,
+					"blend_weight_eyebrow": 0.9,
+					"blend_weight_eye": 0.75,
+					"blend_weight_mouth": 0.7,
+					"blend_weight_face": 0.9,
+					"blend_weight_jaw": 0.95,
+					"quality_level": 0,
+					"iso_thres": 20000,
+					"extend": "L2c8My41CyAsMC4mJhonJyAMMTwxMDA8Ixo2Pic9MBomMzY6O2ducnJ9Zml0cCo3Cy01OzAMNikxPCYMMCAgMys/dn90Y25zdi0wMTA8JGducjlxPCE3IC0jCyA6MyA/MWducnJ/dGc8NiEhOzULOh0jNSELICMnPSp2aGJjeGV2OiYwJiokDTEwOzcxDTY7JiAncHhzZGtnfmJxPCE3IC0jCzILIiM3Czc1Jis8dn90Ym5zdi0wMTA8JBojOyYnPBogOjA2J2ducnFjZDh4cmA/NSswPyMhPxo7MSEMMiw4JichCyw5NR0gIScLMC42OiELICMnPSp2aGJieGV2Py0mIC0LMC0hMCAmDTIyMBomMzY6O2ducnJ9Zml0cC88ITE8DTE7NSExDSE/PTULJCM/ISB2aGJjend4cmA9OywnNx0yODU8M2BpdHR6YHd/dGc6PSsgMRonMS0hMRogOjA2J2ducnJ9Z2l0cCw8PTYxDTE6LiALJiohMTZ2aGJgZHV4cmA9Ozc5My4MMiQ3Nx0xOz0LMC0nICo5DS01MjYxJh0hNTE9PWBpdGhkfHJmeGV2PC0hOSQ4DSQyNyALMC0rCykxNDYMOyMyIScnCzc1Jis8dn90f3J9ZX14cmA9Ozc5My4MMiQ3Nx0xOz0LICs0PDELPSQ1JyAgDTAyICw7cHhzeXV6Y3p/dGc6PTA+NSkLNCMwMRo2PToMICokDS01MjYxJh0hNTE9PWBpdGhkfHJmeGV2PC0hOSQ4DSQyNyA2PToMJCQwDTAyICw7cHhzZWtnZ25zdjQhMy46IDx2aGIodiQwODcgIBo2Pic9MBojNys0PDF2aGJgeGV2IzcyOCwgKx0nPDcxIWBpdB5kfHdmeGVlfHJmeGVgfmJjen14cnN9YXB4cnF9ZnB4cnN9ZHB4cnN9bWl0YWxiCTh4cmAmJyALOiM6Jho5MzE4dn90Ym5zdjAnNx07NSkyDScrNikhIB0gIScLNzs2Njc7JWBpdHR4cmAmJyALOiYMNSEwDSw8PTYxcHhzZWl0cDcgMRo8Nh07NSwmDSA/MSswcHhzZWl0cDcgMRo8Nh07NSwmDSA/MSswDSY2ICQ9PmBpdHR4cmAmJyALOiYMPiQjDSA/MSswcHhzZWl0cDcgMRo8Nh0/PTExcHhzZWl0cDcgMRo8Nh0+OzAgOh02MCIxcHhzZWl0cDcgMRo8Nh0+OzAgOh0gPCQwNx0xOCA6NmBpdHV4cmAmJyALOiYMOionJyAMOSowNy4MMCAgMys/CyoyDSQyNyB2aGJieGV2JzE2Cyk1PCY+NTc/DS0wNxomMzY6OxoyOy4nMTcLOy80dn90Y25zdjAnNx0gJCA3OyM/CzcxMTZxbmVlLw=="
+				}
+    }
+    
+]

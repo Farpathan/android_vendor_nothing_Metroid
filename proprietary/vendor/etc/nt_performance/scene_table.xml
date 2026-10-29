@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCNTABLE>
+    <!--launcher-->
+    <scenario name="APP_START_EXIT_ANIMATION" id="1">
+        <data cmd="CMD_CPUSET_BG_CPUS" params1="0-1,5"></data>
+        <data cmd="CMD_PROCESS_AFFINITY" params1="2,3,4,7"></data>
+        <data cmd="CMD_CPUCTL_RESTRICTED_PROCS" restore="root"></data>
+        <data cmd="CMD_ANIMATION_BOOST"></data>
+        <!-- vendor/qcom/proprietary/perf-core/extnIntf/PerflocksResources.h -->
+        <!-- MPCTLV3_CORE_CTL_MIN_PARTIAL_CPUS_BIG 0x41010000-->
+        <!-- MPCTLV3_WALT_ADAPTIVE_LEVEL_1_FREQ_BIG  0x40814000-->
+        <!-- MPCTLV3_WALT_ADAPTIVE_LEVEL_1_FREQ_PRIME  0x40814200-->
+        <!-- MPCTLV3_GPU_MIN_POWER_LEVEL  0x42804000-->
+        <data cmd="CMD_PLATFORM_CONTROL" params1="0x41010000,0,0x40814000,2438400,0x40814200,2054400,0x42804000,6"></data>
+        <data cmd="CMD_CPUSET_CAMERA_DAEMON_CPUS" holdtime="500" params1="0-1"></data>
+        <data cmd="CMD_BACKGROUND_FREEZE" holdtime="500"></data>
+    </scenario>
+
+    <scenario name="LAUNCHER_NORMAL_ANIMATION" id="2">
+        <data cmd="CMD_ANIMATION_BOOST"></data>
+        <data cmd="CMD_PROCESS_AFFINITY" params1="2,3,4,7"></data>
+        <data cmd="CMD_PLATFORM_CONTROL" params1="0x41010000,0,0x40814000,2438400,0x40814200,2054400,0x42804000,6"></data>
+        <data cmd="CMD_CPUCTL_RESTRICTED_PROCS" restore="root"></data>
+    </scenario>
+
+    <scenario name="LAUNCHER_ITEM_LOADING" id="3">
+        <data cmd="CMD_THREAD_BOOST"></data>
+    </scenario>
+
+    <scenario name="LAUNCHER_OVERLOAD_ANIMATION" id="4">
+        <data cmd="CMD_ANIMATION_BOOST"></data>
+        <data cmd="CMD_PROCESS_AFFINITY" params1="2,3,4,7"></data>
+        <data cmd="CMD_PLATFORM_CONTROL" params1="0x41010000,0,0x40814000,2438400,0x40814200,2054400,0x42804000,6"></data>
+        <data cmd="CMD_CPUCTL_RESTRICTED_PROCS" restore="root"></data>
+    </scenario>
+
+    <scenario name="LAUNCHER_SCREEN_ON" id="5">
+        <data cmd="CMD_ANIMATION_BOOST"></data>
+        <data cmd="CMD_ANIMATION_BOOST" process="com.android.systemui"></data>
+        <data cmd="CMD_PLATFORM_CONTROL" params1="0x41010000,0,0x40814000,2438400,0x40814200,2054400,0x42804000,6"></data>
+        <data cmd="CMD_PROCESS_AFFINITY" params1="2,3,4,7"></data>
+        <data cmd="CMD_CPUCTL_RESTRICTED_PROCS" restore="root"></data>
+    </scenario>
+
+    <!--systemui-->
+    <scenario name="QS_PULL_DOWN" id="100">
+        <data cmd="CMD_CPUSET_TA_CPUS" delaytime="50" params1="0-1,5-6" holdtime="1000"></data>
+        <data cmd="CMD_CPUCTL_RESTRICTED_PROCS"></data>
+        <data cmd="CMD_ANIMATION_BOOST"></data>
+        <data cmd="CMD_PROCESS_AFFINITY" params1="2,3,4,7"></data>
+        <data cmd="CMD_PLATFORM_CONTROL" params1="0x41010000,0,0x40814000,2438400,0x40814200,2054400,0x42804000,6"></data>
+        <data cmd="CMD_CPUSET_CAMERA_DAEMON_CPUS" params1="0-1"></data>
+    </scenario>
+
+    <scenario name="UNLOCK_ANIMATION" id="101">
+        <data cmd="CMD_PROCESS_AFFINITY" params1="2,3,4,7"></data>
+        <data cmd="CMD_ANIMATION_BOOST"></data>
+        <data cmd="CMD_PLATFORM_CONTROL" params1="0x41010000,0,0x40814000,2438400,0x40814200,2054400,0x42804000,6"></data>
+        <data cmd="CMD_CPUCTL_RESTRICTED_PROCS"></data>
+        <data cmd="CMD_CPUSET_CAMERA_DAEMON_CPUS" params1="0-1"></data>
+        <data cmd="CMD_CPUSET_TA_CPUS" params1="0-1,5-6" holdtime="1000"></data>
+    </scenario>
+
+    <scenario name="SYSTEMUI_NORMAL_ANIMATION" id="102">
+        <data cmd="CMD_ANIMATION_BOOST"></data>
+        <data cmd="CMD_PROCESS_AFFINITY" params1="2,3,4,7"></data>
+        <data cmd="CMD_PLATFORM_CONTROL" params1="0x41010000,0,0x40814000,2438400,0x40814200,2054400,0x42804000,6"></data>
+        <data cmd="CMD_CPUCTL_RESTRICTED_PROCS"></data>
+    </scenario>
+
+    <!--camera-->
+    <scenario name="CAMERA_OPEN" id="200">
+        <data cmd="CMD_CPUSET_CAMERA_DAEMON_CPUS" params1="0-7"></data>
+        <data cmd="CMD_CPUSET_TA_CPUS" holdtime="2000" params1="0-3"></data>
+        <data cmd="CMD_CPUSET_FG_CPUS" holdtime="2000" params1="0-3"></data>
+        <data cmd="CMD_CPUSET_NTCAM_ALGO_CPUS" params1="0-3"></data>
+        <data cmd="CMD_CPUSET_CAMERA_DAEMON_PROCS" process="vendor.qti.camera.provider-service_64"></data>
+        <data cmd="CMD_CPUSET_NTCAM_ALGO_PROCS" process="vendor.noth.hardware.camera-service"></data>
+    </scenario>
+    <scenario name="CAMERA_CONFIG_SLOW_MOTION"  id="201">
+        <data cmd="CMD_CPUSET_CAMERA_DAEMON_CPUS" params1="0-1" holdtime="4000"></data>
+        <data cmd="CMD_CPUSET_CAMERA_DAEMON_PROCS" process="vendor.qti.camera.provider-service_64"></data>
+    </scenario>
+    <scenario name="CAPTURE_START" id="202">
+        <data cmd="CMD_CPUSET_CAMERA_DAEMON_CPUS" params1="0-7"></data>
+        <data cmd="CMD_CPUSET_CAMERA_DAEMON_PROCS" process="vendor.qti.camera.provider-service_64"></data>
+    </scenario>
+    <scenario name="LIMIT_HAL_CAPTURE_START" id="203">
+        <data cmd="CMD_CPUSET_CAMERA_DAEMON_CPUS" params1="0-5"></data>
+        <data cmd="CMD_CPUSET_CAMERA_DAEMON_PROCS" process="vendor.qti.camera.provider-service_64"></data>
+    </scenario>
+    <scenario name="CONTINUOUS_CAPTURE_START" id="204">
+        <data cmd="CMD_CPUSET_NTCAM_ALGO_CPUS" params1="0-7" restore="0-3"></data>
+        <data cmd="CMD_CPUSET_NTCAM_ALGO_PROCS" process="vendor.noth.hardware.camera-service"></data>
+    </scenario>
+    <scenario name="NTCAM_ALGO_PROCESS1" id="205">
+        <data cmd="CMD_CPUSET_NTCAM_ALGO_CPUS" params1="5-7" restore="0-3"></data>
+        <data cmd="CMD_CPUSET_NTCAM_ALGO_PROCS" process="vendor.noth.hardware.camera-service"></data>
+    </scenario>
+    <scenario name="NTCAM_ALGO_PROCESS2" id="206">
+        <data cmd="CMD_CPUSET_NTCAM_ALGO_CPUS" params1="1-4" restore="0-3"></data>
+        <data cmd="CMD_CPUSET_NTCAM_ALGO_PROCS" process="vendor.noth.hardware.camera-service"></data>
+    </scenario>
+    <scenario name="NTCAM_ALGO_PROCESS3" id="207">
+        <data cmd="CMD_CPUSET_NTCAM_ALGO_CPUS" params1="0-3" restore="0-3"></data>
+        <data cmd="CMD_CPUSET_NTCAM_ALGO_PROCS" process="vendor.noth.hardware.camera-service"></data>
+    </scenario>
+    <scenario name="CAMERA_CLOSE" id="208">
+        <data cmd="CMD_CPUSET_CAMERA_DAEMON_CPUS" params1="0-7"></data>
+        <data cmd="CMD_CPUSET_NTCAM_ALGO_PROCS" process="vendor.noth.hardware.camera-service"></data>
+    </scenario>
+    <scenario name="CAMERA_EXIT1" id="209">
+        <data cmd="CMD_CPUSET_NTCAM_ALGO_CPUS" params1="0-7" restore="0-3"></data>
+        <data cmd="CMD_CPUSET_NTCAM_ALGO_PROCS" process="vendor.noth.hardware.camera-service"></data>
+    </scenario>
+    <scenario name="CAMERA_EXIT2" id="210">
+        <data cmd="CMD_CPUSET_CAMERA_DAEMON_CPUS" holdtime="1500" params1="0-3"></data>
+        <data cmd="CMD_CPUSET_NTCAM_ALGO_CPUS" params1="0-7" restore="0-3"></data>
+        <data cmd="CMD_CPUSET_CAMERA_DAEMON_PROCS" process="vendor.qti.camera.provider-service_64"></data>
+        <data cmd="CMD_CPUSET_NTCAM_ALGO_PROCS" process="vendor.noth.hardware.camera-service"></data>
+    </scenario>
+    <scenario name="CAMERA_LIMIT_TOP" id="211">
+        <data cmd="CMD_CPUSET_TA_CPUS" holdtime="1500" params1="0-3"></data>
+        <data cmd="CMD_CPUSET_FG_CPUS" holdtime="1500" params1="0-3"></data>
+    </scenario>
+
+    <!--game-->
+    <scenario name="GAME1" id="300">
+        <data cmd="CMD_NT_NAMED_THREAD_AFFINITY" needparams="true"></data>
+    </scenario>
+    <scenario name="GAME2" id="301">
+    </scenario>
+    <!--benchmark-->
+    <scenario name="bench_gpu" id="400">
+        <data cmd="CMD_PLATFORM_CONTROL" params1="0x40804000,1516,0x40804300,1516,0x40804200,1670"></data>
+    </scenario>
+    <scenario name="bench_cpu" id="401">
+        <data cmd="CMD_PLATFORM_CONTROL" params1="0x40C00000,2,0x42804000,3,0x40CAC000,20,0x40CA4000,2,0x40800000,1824,0x40800100,883,0x40800200,1670,0x40800300,1785,0x40C74000,0xFC,0x40408000,0x63,0x42C1C000,1,0x40CFC000,0,0x4348C000,0x71C50,0X43C1C000,0x7FFFFFFF,0X43C1C100,0x7FFFFFFF,0X43C1C200,0x7FFFFFFF,0X43C20000,0x7FFFFFFF"></data>
+    </scenario>
+    <!--fling boost-->
+    <scenario name="fling_level_1" id="500">
+        <data cmd="CMD_PLATFORM_CONTROL" params1="0x40814000,2438400,0x40814200,2054400,0x40814300,2054400,0x40808300,2438400,0x42804000,6"></data>
+    </scenario>
+    <!-- disable input boost -->
+    <scenario name="DISABLE_INPUT_BOOST" id="600">
+        <data cmd="CMD_BACKGROUND_LOAD_LIMIT" params1="0"></data>
+    </scenario>
+    <!-- test -->
+    <scenario name="test" id="10000">
+        <data cmd="CMD_CPUSET_BG_CPUS" holdtime="500" params1="0-1"></data>
+    </scenario>
+</SCNTABLE>

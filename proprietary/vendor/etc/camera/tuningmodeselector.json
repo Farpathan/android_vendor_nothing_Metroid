@@ -1,0 +1,268 @@
+{
+    "Table" : [
+        {
+            "OperationMode"   : "NormalPhoto",
+            "Facing"          : ["Rear"],
+            "CaptureIntent"   : ["Preview"],
+            "SelectData"      : ["Supernight", "SupernightSE", "SupernightLite", "Zoom8x", "Zoom12x", "Zoom20x", "Zoom40x", "Face", "Touch", "Beauty", "Moon", "SR", "HDSR", "TurboMF"],
+            "TuningModeValue" : {
+                "Feature1"    : "None",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "NormalPhoto",
+            "Facing"          : ["Rear"],
+            "CaptureIntent"   : ["Still Capture"],
+            "SelectData"      : ["ISZ", "Supernight", "SupernightSE", "SupernightLite", "Zoom8x", "Zoom12x", "Zoom20x", "Zoom40x", "MotionCapture", "TurboMF", "HDR", "SR", "HDSR", "MotionCaptureSE", "Face", "Touch", "Beauty", "Moon", "BurstCapture"],
+            "TuningModeValue" : {
+                "Feature1"    : "None",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "QCFAMFNR",
+            "Facing"          : ["Rear"],
+            "CaptureIntent"   : ["Preview"],
+            "SelectData"      : ["Supernight","SupernightSE","Face", "Touch", "Beauty", "Moon"],
+            "TuningModeValue" : {
+                "Feature1"    : "None",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "QCFAMFNR",
+            "Facing"          : ["Rear"],
+            "CaptureIntent"   : ["Still Capture"],
+            "SelectData"      : ["Supernight", "TurboMF", "HDR", "SupernightSE", "Face", "Touch", "Beauty", "Moon"],
+            "TuningModeValue" : {
+                "Feature1"    : "None",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "QTIEISLookAhead",
+            "Facing"          : ["Rear", "Front"],
+            "CaptureIntent"   : ["Preview", "Video Record", "Video Snapshot"],
+            "SelectData"      : ["Video1080P", "Video4K", "Face", "Touch", "Beauty", "Zoom8x", "Zoom12x", "Zoom20x", "Zoom40x"],
+            "TuningModeValue" : {
+                "Feature1"    : "None",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "Bokeh",
+            "Facing"          : ["Rear", "Front"],
+            "CaptureIntent"   : ["Preview"],
+            "SelectData"      : ["Face", "Touch", "Beauty"],
+            "TuningModeValue" : {
+                "Feature1"    : "Bokeh",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "Bokeh",
+            "Facing"          : ["Rear", "Front"],
+            "CaptureIntent"   : ["Still Capture"],
+            "SelectData"      : ["TurboMF", "HDR", "SupernightSE", "Face", "Touch", "Beauty"],
+            "TuningModeValue" : {
+                "Feature1"    : "Bokeh",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "NormalNight",
+            "Facing"          : ["Rear", "Front"],
+            "CaptureIntent"   : ["Preview"],
+            "SelectData"      : ["Supernight", "TurboMF", "HDR", "Face", "Touch", "Beauty", "SR", "Zoom8x", "Zoom12x", "Zoom20x", "Zoom40x", "Moon",  "HDSR"],
+            "TuningModeValue" : {
+                "Feature1"    : "None",
+                "Feature2"    : "SupernightHand",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "NormalNight",
+            "Facing"          : ["Rear", "Front"],
+            "CaptureIntent"   : ["Still Capture"],
+            "SelectData"      : ["Supernight", "TurboMF", "HDR", "Face", "Touch", "Beauty", "SR", "Zoom8x", "Zoom12x", "Zoom20x", "Zoom40x", "Moon", "ISZ", "HDSR", "BurstCapture"],
+            "TuningModeValue" : {
+                "Feature1"    : "None",
+                "Feature2"    : "SupernightHand",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "Expert",
+            "Facing"          : ["Front", "Rear"],
+            "CaptureIntent"   : ["Preview", "Still Capture"],
+            "SelectData"      : ["Face", "Touch", "Beauty"],
+            "TuningModeValue" : {
+                "Feature1"    : "Profession",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "Panorama",
+            "Facing"          : ["Rear"],
+            "CaptureIntent"   : ["Preview", "Still Capture"],
+            "SelectData"      : ["None"],
+            "TuningModeValue" : {
+                "Feature1"    : "Panorama",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "TimeLapse",
+            "Facing"          : ["Rear"],
+            "CaptureIntent"   : ["Video Record"],
+            "SelectData"      : ["Video1080P", "Video4K"],
+            "TuningModeValue" : {
+                "Feature1"    : "TimeLapse",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "ConstrainedHighSpeed",
+            "Facing"          : ["Rear"],
+            "CaptureIntent"   : ["Video Record"],
+            "SelectData"      : ["None"],
+            "TuningModeValue" : {
+                "Feature1"    : "Slowmotion",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "Motion",
+            "Facing"          : ["Rear"],
+            "CaptureIntent"   : ["Preview"],
+            "SelectData"      : ["MotionCapture", "Supernight","SupernightSE","SupernightLite", "Face", "Touch", "Beauty"],
+            "TuningModeValue" : {
+                "Feature1"    : "MotionCapture",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "Motion",
+            "Facing"          : ["Rear"],
+            "CaptureIntent"   : ["Still Capture"],
+            "SelectData"      : ["Supernight", "MotionCapture", "TurboMF", "HDR", "SupernightSE", "SupernightLite", "Face", "Touch", "Beauty"],
+            "TuningModeValue" : {
+                "Feature1"    : "None",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "Macro",
+            "Facing"          : ["Rear"],
+            "CaptureIntent"   : ["Preview"],
+            "SelectData"      : ["Face", "Touch", "Beauty", "SR", "Macro"],
+            "TuningModeValue" : {
+                "Feature1"    : "None",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "Macro",
+            "Facing"          : ["Rear"],
+            "CaptureIntent"   : ["Still Capture"],
+            "SelectData"      : ["ISZ", "Supernight", "MotionCapture", "TurboMF", "HDR", "SR", "HDSR", "SupernightSE", "MotionCaptureSE", "Face", "Touch", "Beauty", "Moon", "Macro"],
+            "TuningModeValue" : {
+                "Feature1"    : "None",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "Normal",
+            "Facing"          : ["Rear", "Front"],
+            "CaptureIntent"   : ["Preview", "Still Capture", "Video Record", "Video Snapshot"],
+            "SelectData"      : ["ThirdAPK", "QQ", "WeChat", "SupernightLite", "ExTNight", "CtsV"],
+            "TuningModeValue" : {
+                "Feature1"    : "None",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "NormalPhoto",
+            "Facing"          : ["Front"],
+            "CaptureIntent"   : ["Preview"],
+            "SelectData"      : ["Supernight", "SupernightSE", "SupernightLite", "Face", "Touch", "Beauty"],
+            "TuningModeValue" : {
+                "Feature1"    : "None",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "NormalPhoto",
+            "Facing"          : ["Front"],
+            "CaptureIntent"   : ["Still Capture"],
+            "SelectData"      : ["Supernight", "SupernightSE", "SupernightLite", "TurboMF", "HDR", "Face", "Touch", "Beauty"],
+            "TuningModeValue" : {
+                "Feature1"    : "None",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "FrontBokeh",
+            "Facing"          : ["Front"],
+            "CaptureIntent"   : ["Preview"],
+            "SelectData"      : ["Face", "Touch", "Beauty"],
+            "TuningModeValue" : {
+                "Feature1"    : "Bokeh",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        },
+        {
+            "OperationMode"   : "FrontBokeh",
+            "Facing"          : ["Front"],
+            "CaptureIntent"   : ["Still Capture"],
+            "SelectData"      : ["SupernightSE", "TurboMF", "HDR", "Face", "Touch", "Beauty"],
+            "TuningModeValue" : {
+                "Feature1"    : "Bokeh",
+                "Feature2"    : "None",
+                "Scene"       : "None",
+                "Effect"      : "None"
+            }
+        }
+    ]
+}

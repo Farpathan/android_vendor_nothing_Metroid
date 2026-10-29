@@ -1,0 +1,2 @@
+on property:vendor.ntddrtest.start=*
+    exec_background  - root system  -- /vendor/bin/nt_ddr_test

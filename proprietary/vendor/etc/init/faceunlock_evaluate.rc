@@ -1,0 +1,12 @@
+on post-fs-data
+    mkdir /data/vendor/faceunlock_evaluate 0777 system system encryption=None
+    mkdir /data/vendor/faceunlock_evaluate/auth_fail 0777 system system encryption=None
+    mkdir /data/vendor/faceunlock_evaluate/auth_success 0777 system system encryption=None
+    mkdir /data/vendor/faceunlock_evaluate/enroll_fail 0777 system system encryption=None
+    mkdir /data/vendor/faceunlock_evaluate/enroll_success 0777 system system encryption=None
+
+on property:system.face.DumpPath=*
+    setprop persist.vendor.face.DumpPath ${system.face.DumpPath}
+
+on property:system.face.debug=*
+    setprop persist.vendor.debug.face_aidl ${system.face.debug}

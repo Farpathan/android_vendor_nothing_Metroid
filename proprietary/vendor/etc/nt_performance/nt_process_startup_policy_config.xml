@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nt-process-manange-config>
+    <scene_enables>
+        <scene name="camera" default_enable="true" />
+        <scene name="game" default_enable="true" />
+        <scene name="low-mem" default_enable="false" />
+        <scene name="high-load" default_enable="false" />
+    </scene_enables>
+
+    <threshold_configs>
+        <mem_pressure low_us="30000" med_us="50000" high_us="70000" />
+        <cpu_pressure low_us="150000" med_us="250000" high_us="450000" />
+    </threshold_configs>
+
+    <package-list type="camera">
+        <package name="com.nothing.camera" />
+    </package-list>
+
+    <package-list type="game">
+        <package name="com.pubg.imobile" />
+        <package name="com.tencent.ig" />
+    </package-list>
+
+    <scene name="camera">
+    </scene>
+
+    <scene name="game">
+    </scene>
+
+    <scene name="low-mem">
+    </scene>
+
+    <scene name="critical-low-mem" extends="low-mem">
+    </scene>
+
+    <scene name="high-load">
+    </scene>
+
+    <scene name="critical-high-load">
+    </scene>
+</nt-process-manange-config>

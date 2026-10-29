@@ -1,0 +1,135 @@
+multiCameraLogicalXMLFile=arbok.xml
+
+#log mask
+chiLogWarningMask=0x0
+chiLogCoreCfgMask=0x40
+chiLogConfigMask=0x0
+chiLogInfoMask=0x40
+logCoreCfgMask=0x80
+logConfigMask=0x82
+logInfoMask=0x80
+logWarningMask=0x0
+logRequestMapping=TRUE
+
+#disable HDR10p
+enableFrameworkHDR10P=FALSE
+
+#enable earlyPCR
+numPCRsBeforeStreamOn=1
+
+#memory optimization
+enableMallopt=1
+
+#flush time
+nodeResponseTime=200
+sessionResponseTimePadding=1000
+sessionMaxFlushWaitTime=1500
+
+# Node Timeout
+presilNodeRequestDoneTimeout=2000
+
+#SOF Threshold
+invalidSOFThreshold=120
+
+#disable recovery
+# raiserecoverysigabrt=TRUE
+# enablechirecovery=FALSE
+# enableSelectiveRecovery=FALSE
+# enableSignal35Tombstone=FALSE
+
+#trace mask
+traceGroupsEnable=0x100C2
+
+#Health Monitor
+enableHealthMonitor=FALSE
+
+#increase chxstreambuffer timeout to cover bad performance
+streamBufferWait=300
+
+#memory optimization
+enableMallopt=1
+MPMSizeDiffAllowedToGroupOverride=1000000
+
+#disable AI Camera
+enableAI=0
+
+#EnableHwBinary
+enableHwBinary=TRUE
+
+# DummyRequestOptimization
+enableDummyRequestOptimization=TRUE
+
+#real torchCurrent = 60*2 = 120 ma
+torchCurrent=60
+
+#disable RRE feature
+enableEOSWithRRE=TRUE
+
+#disable VIULL Feature
+enableVIULLProcessing=TRUE
+
+#disable EIS get OIS
+EISv2DisableOIS=FALSE
+EISv3DisableOIS=FALSE
+
+# disable InstantZoomPlus to predict policy
+enableInstantZoomPlus=FALSE
+
+# add for insensorzoom
+enableDynamicModeSwitchVCUpdate=TRUE
+enableSensorRemosaic=FALSE
+enableDRV=FALSE
+enableInSensorZoomForOnlyPhysicalStream=TRUE
+
+#enable EIS ZSL Feature
+enablePrevStabZSLSupport=TRUE
+
+# Arcsoft SAT
+SATWrapperType=2
+
+# maxRawSize set to 10
+maxRAWSizes=1
+
+acceptAppUIFacialAttrSettings=FALSE
+
+enableALSLightSensor=TRUE
+enableFlickerSensor=TRUE
+
+multiCameraSWFrameSyncType=0
+
+enableDMEbasedMCTF=TRUE
+enableDMMbasedMCTF=TRUE
+
+# set SN threshold
+AECLuxIndexThresholdForTurboNight=310.0
+FAECLuxIndexThresholdForTurboNight=380.0
+FAECLuxIndexThresholdForSuperNightLite=400.0
+UwAECLuxIndexThresholdForTurboNight=340.0
+UwAECLuxIndexThresholdForSuperNightLite=340.0
+TeleAECLuxIndexThresholdForTurboNight=380.0
+TeleAECLuxIndexThresholdForSuperNightLite=390.0
+
+#set 50M threshold
+AECLuxIndexThresholdForQCFA= 260
+AECDRCGainThresholdForQCFA=3
+AECDarkBoostGainThresholdForQCFA=1.5
+TeleAECLuxIndexThresholdForQCFA=230
+TeleAECDRCGainThresholdForQCFA=3
+TeleAECDarkBoostGainThresholdForQCFA=1.5
+UwAECLuxIndexThresholdForQCFA=10
+UwAECDRCGainThresholdForQCFA=1
+UwAECDarkBoostGainThresholdForQCFA=1
+
+# override video dataspace to BT709
+overrideVideoDataspace=overrideVideoDataspaceBT709
+
+# set max fps of non hfr
+maxNonHfrFps=30
+
+# No need FD full stream dimension
+enableFDFullStreamDimension=FALSE
+
+# enable photo eis zoomratio
+ZoomRatioThresholdEnablePhotoEIS=5.0
+
+ThirdFDEnable=TRUE

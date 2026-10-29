@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ACTIVITY_CUSTOMIZATION>
+    <package name="com.antutu.benchmark.full">
+        <activity name="com.epicgames.ue4.GameActivity">
+            <scene id="400"></scene>
+        </activity>
+        <scene id="401"></scene>
+    </package>
+    <package name="com.antutu.ABenchMark">
+        <scene id="401"></scene>
+    </package>
+    <package name="com.zeptoconsumerapp">
+        <horizontal_fling_scene id="500"></horizontal_fling_scene>
+        <vertical_fling_scene id="500"></vertical_fling_scene>
+    </package>
+    <package name="com.facebook.katana">
+        <vertical_fling_scene id="500"></vertical_fling_scene>
+    </package>
+    <package name="com.lazada.android">
+        <vertical_fling_scene id="500"></vertical_fling_scene>
+    </package>
+    <package name="com.twitter.android">
+        <vertical_fling_scene id="500"></vertical_fling_scene>
+    </package>
+    <package name="com.instagram.android">
+        <vertical_fling_scene id="500"></vertical_fling_scene>
+    </package>
+    <package name="com.google.android.apps.nbu.files">
+        <scene id="600"></scene>
+    </package>
+    <package name="com.google.android.packageinstaller">
+        <activity name="com.android.packageinstaller.PackageInstallerActivity">
+            <scene id="600"></scene>
+        </activity>
+    </package>
+</ACTIVITY_CUSTOMIZATION>

@@ -1,0 +1,49 @@
+#!/bin/sh
+
+let SPEAKER_CAL_MIN=5000
+let SPEAKER_CAL_MAX=7500
+let SPEAKER_CAL2_MIN=5000
+let SPEAKER_CAL2_MAX=8000
+
+rm -f /mnt/vendor/persist/audio/tfa_spk_cal_val_ui
+sleep 1
+setprop vendor.audio.hal.cali.spk true
+echo "starting calibration (tfadsp)"
+sleep 4
+echo "Calibration wait ... (tfadsp)"
+let i=1
+while [ $i -le 10 ];do
+	if [ -f /mnt/vendor/persist/audio/tfa_spk_cal_val_ui ]; then
+		tfa_spk1_RE=`cut -d ' ' -f 1 /mnt/vendor/persist/audio/tfa_spk_cal_val_ui`
+		tfa_spk2_RE=`cut -d ' ' -f 2 /mnt/vendor/persist/audio/tfa_spk_cal_val_ui`
+		if [ -n "$tfa_spk1_RE" ] && [ -n "$tfa_spk2_RE" ]; then
+			echo "Calibration PASSED"
+			echo "Calibration impedance (Ohm): $tfa_spk1_RE $tfa_spk2_RE (tfadsp)"
+			setprop vendor.audio.hal.cali.spkre "$tfa_spk1_RE $tfa_spk2_RE"
+			echo "Calibration setprop vendor.audio.hal.cali.spkre $tfa_spk1_RE $tfa_spk2_RE"
+			tfa_spk1result=$(echo "scale=4; $tfa_spk1_RE / 1000" | bc)
+			echo "0x34Calibration value: $tfa_spk1result ohm"
+			tfa_spk2result=$(echo "scale=4; $tfa_spk2_RE / 1000" | bc)
+			echo "0x35Calibration value: $tfa_spk2result ohm"
+			if [ $tfa_spk1_RE -lt $SPEAKER_CAL_MIN ] || [ $tfa_spk1_RE -gt $SPEAKER_CAL_MAX ]; then
+				echo "0x34 Speaker impedance is outside rangeCalibration FAILED ERROR"
+				echo "Calibration FAILED ERROR"
+				exit
+			fi
+			if [ $tfa_spk2_RE -lt $SPEAKER_CAL2_MIN ] || [ $tfa_spk2_RE -gt $SPEAKER_CAL2_MAX ]; then
+				echo "0x35 Speaker impedance is outside rangeCalibration FAILED ERROR"
+				echo "Calibration FAILED ERROR"
+				exit
+			fi
+			echo "0x34 Speaker impedance is within rangeCalibration PASSED OK"
+			echo "0x35 Speaker impedance is within rangeCalibration PASSED OK"
+			echo "Calibration PASSED OK"
+			sleep 1
+		exit
+		fi
+	fi
+	sleep 1
+	echo "Calibration wait $i... (tfadsp)"
+	let i=$i+1
+done
+echo "Calibration FAILED ERROR (tfadsp)"

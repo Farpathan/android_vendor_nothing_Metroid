@@ -1,0 +1,17 @@
+{
+    "beta": 0.65,
+    "mouth": 0.9,
+    "eye": 1,
+    "eyebrow": 1,
+    "blend_weight_border": 0.5,
+    "smoothness": 0.65,
+    "blend_weight_eyebrow": 0.95,
+    "blend_weight_eye": 0.95,
+    "blend_weight_mouth": 0.73,
+    "blend_weight_face": 0.52,
+    "blend_weight_jaw": 0.22,
+    "blend_weight_hair": 0.1,
+    "quality_level": 0,
+    "iso_thres": 20000,
+    "extend": "L2c8NiEhOzV2aGIodi0wMTA8JBoxPCMxOCB2aGJjKWl0cC88ITE8DSA8JiExIB0jNSELICMnPSp2aGJjen14cmA+OzAgOh0gPCQwNx0wOCwkDTQyODAxcHhzZGtsfmJxOio9IScMNSkkOiNxbmVlfHF/dGc6PSsgMRonMS0hMRogOjA2J2ducnN9Zml0cCw8PTYxDTE6LiALJiohMTZ2aGJrZHV4cmA9Ozc5My4MMiQ3Nx0xOz0LPic1IBo7NCQgMTELICMnPSp2aGJ+ZGtlam5zdis7IC8yOBoyMyE2Cyc7Kh0hPSI8Jh08MiMnNzYMJiQgOy1xbmV5YmxibGl0cCw8Jig1Ph01NSYxMC0rCzU1Nh0hNTE9PWBpdHR6ZW5zdjAnNx07NSwmDS8yJy52aGJieGV2JzE2Cy0wDSM3MBo6PSsgMWducnN/dGchIScMPCELOiM6Jho2Pic9MGducnN/dGchIScMPCELOCMkCyc4Nyw3dn90Y25zdjAnNx07MBo4OzY2dn90Y25zdjAnNx07MBo5PTcnPBoxNiU2dn90Y25zdjAnNx0gJCA3OyM/CzcxMTZxbmVlLw=="
+}

@@ -1,0 +1,220 @@
+{
+    "alsWarmStartInfoArray" : [
+        {
+            "comment" : "Wide",
+            "cameraId" : 0,
+            "warmstartInfoTable" : [
+                {
+                    "comment" : "this is a example",
+                    "alsLuxRange" : "2个float类型：[50, 100]表示als sensor输出的lux在50~100之间",
+                    "sensitivity" : "3个float类型：[100,100,100]表示在此alsLux区间的short,long,safe的sensitivity",
+                    "startMode" : "int类型：表示启动模式，有normal=0,fastConverge=1,warmStart=2",
+                    "compenDarkBoostGain" : "float类型：表示热启动的DarkBoostGain",
+                    "compenADRCGain" : "float类型：表示热启动的ADRCGain"
+                },
+                {
+                    "alsLuxRange" : [0, 10],
+                    "sensitivity" : [800000000, 800000000, 800000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 2
+                },
+                {
+                    "alsLuxRange" : [10, 80],
+                    "sensitivity" : [240000000, 240000000, 240000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 2
+                },
+                {
+                    "alsLuxRange" : [80, 260],
+                    "sensitivity" : [32000000, 32000000, 32000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 2
+                },
+                {
+                    "alsLuxRange" : [260, 500],
+                    "sensitivity" : [16000000, 16000000, 16000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 2
+                },
+                {
+                    "alsLuxRange" : [500, 10000],
+                    "sensitivity" : [2000000, 2000000, 2000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 2
+                }
+            ]
+        },
+        {
+            "comment" : "UltraWide",
+            "cameraId" : 1,
+            "warmstartInfoTable" : [
+                {
+                    "comment" : "this is a example",
+                    "alsLuxRange" : "float类型：[50, 100]表示als sensor输出的lux在50~100之间",
+                    "sensitivity" : "float类型：[100,100,100]表示在此alsLux区间的short,long,safe的sensitivity",
+                    "startMode" : "int类型：表示启动模式，有normal=0,fastConverge=1,warmStart=2",
+                    "compenDarkBoostGain" : "float类型：表示热启动的DarkBoostGain",
+                    "compenADRCGain" : "float类型：表示热启动的ADRCGain"
+                },
+                {
+                    "alsLuxRange" : [0, 10],
+                    "sensitivity" : [800000000, 800000000, 800000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 2
+                },
+                {
+                    "alsLuxRange" : [10, 80],
+                    "sensitivity" : [240000000, 240000000, 240000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 2
+                },
+                {
+                    "alsLuxRange" : [80, 260],
+                    "sensitivity" : [32000000, 32000000, 32000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 2
+                },
+                {
+                    "alsLuxRange" : [260, 500],
+                    "sensitivity" : [16000000, 16000000, 16000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 2
+                },
+                {
+                    "alsLuxRange" : [500, 10000],
+                    "sensitivity" : [4000000, 4000000, 4000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 2
+                }
+            ]
+        },
+        {
+            "comment" : "Tele",
+            "cameraId" : 2,
+            "warmstartInfoTable" : [
+                {
+                    "comment" : "this is a example",
+                    "alsLuxRange" : "float类型：[50, 100]表示als sensor输出的lux在50~100之间",
+                    "sensitivity" : "float类型：[100,100,100]表示在此alsLux区间的short,long,safe的sensitivity",
+                    "startMode" : "int类型：表示启动模式，有normal=0,fastConverge=1,warmStart=2",
+                    "compenDarkBoostGain" : "float类型：表示热启动的DarkBoostGain",
+                    "compenADRCGain" : "float类型：表示热启动的ADRCGain"
+                },
+                {
+                    "alsLuxRange" : [0, 10],
+                    "sensitivity" : [800000000, 800000000, 800000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 2
+                },
+                {
+                    "alsLuxRange" : [10, 80],
+                    "sensitivity" : [240000000, 240000000, 240000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 2
+                },
+                {
+                    "alsLuxRange" : [80, 260],
+                    "sensitivity" : [32000000, 32000000, 32000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 2
+                },
+                {
+                    "alsLuxRange" : [260, 500],
+                    "sensitivity" : [16000000, 16000000, 16000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 2
+                },
+                {
+                    "alsLuxRange" : [500, 10000],
+                    "sensitivity" : [4000000, 4000000, 4000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 2
+                }
+            ]
+        },
+        {
+            "comment" : "Front",
+            "cameraId" : 3,
+            "warmstartInfoTable" : [
+                {
+                    "comment" : "this is a example",
+                    "alsLuxRange" : "float类型：[50, 100]表示als sensor输出的lux在50~100之间",
+                    "sensitivity" : "float类型：[100,100,100]表示在此alsLux区间的short,long,safe的sensitivity",
+                    "startMode" : "int类型：表示启动模式，有normal=0,fastConverge=1,warmStart=2",
+                    "compenDarkBoostGain" : "float类型：表示热启动的DarkBoostGain",
+                    "compenADRCGain" : "float类型：表示热启动的ADRCGain"
+                },
+                {
+                    "alsLuxRange" : [0, 10],
+                    "sensitivity" : [800000000, 800000000, 800000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 1
+                },
+                {
+                    "alsLuxRange" : [10, 80],
+                    "sensitivity" : [240000000, 240000000, 240000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 1
+                },
+                {
+                    "alsLuxRange" : [80, 260],
+                    "sensitivity" : [140000000, 140000000, 140000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 1
+                },
+                {
+                    "alsLuxRange" : [260, 500],
+                    "sensitivity" : [100000000, 100000000, 100000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 1
+                },
+                {
+                    "alsLuxRange" : [500, 10000],
+                    "sensitivity" : [50000000, 50000000, 50000000],
+                    "startMode" : 0,
+                    "luxIndex" : 260,
+                    "compenDarkBoostGain" : 1,
+                    "compenADRCGain" : 1
+                }
+            ]
+        }
+    ]
+}

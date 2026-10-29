@@ -1,0 +1,16 @@
+on boot
+    chmod 0644 /proc/nt_check_partitions/enable
+
+service nt_verify_partition /vendor/bin/nt_verify_partition
+    class main
+    user root
+    group root system
+    oneshot
+    ioprio rt 4
+    task_profiles HighPerformance
+    rlimit rtprio 10 10
+    capabilities SYS_NICE
+    disabled
+
+on property:sys.partition.verify=1
+    start nt_verify_partition

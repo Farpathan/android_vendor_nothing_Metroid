@@ -1,0 +1,4 @@
+# Strongbox property settings
+on early-init
+    setprop ro.strongbox.manufacturer "Thales"
+    setprop ro.strongbox.model "ST54L-CeSE-1.2"

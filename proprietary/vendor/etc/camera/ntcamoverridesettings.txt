@@ -1,0 +1,16 @@
+MaxRequestQueueDepth=3
+NumberOfThread=3
+LogInfoMask=0xffff
+LogVerboseMask=0x71
+LogDebugMask=0xffff
+LivePendingRequestTimeOut=30000
+EnableReuqestLIFO=0
+SelectNightSceneType=1
+MaxMemPoolTotalBufferNumber=100
+MaxRequestQueueDepthForBokeh=2
+DelayedTriggerOfAbort=1
+TeleZoomStart=3.0
+EnableCopyOnNodeFailedMask=0x204400000
+EnableInitFailedAssert=1
+ReservedMemory=512
+WaitCameraServiceSec=10

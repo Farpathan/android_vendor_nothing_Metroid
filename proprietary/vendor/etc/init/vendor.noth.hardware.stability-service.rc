@@ -1,0 +1,8 @@
+service vendor.stability-default /vendor/bin/hw/vendor.noth.hardware.stability-service
+    interface aidl vendor.noth.hardware.stability.IStability/default
+    class hal
+    user system
+    group system
+
+on property:ro.boot.ntdebug=*
+    setprop vendor.nt.battery_info.debug_enable ${ro.boot.ntdebug}

@@ -1,0 +1,2 @@
+on property:persist.system.rdump.enable=*
+    setprop persist.vendor.rdump.enable ${persist.system.rdump.enable}

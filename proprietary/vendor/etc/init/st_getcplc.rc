@@ -1,0 +1,6 @@
+service getcplc_service /vendor/bin/st_getcplc
+    class hal
+    user nfc
+    group nfc
+    oneshot
+
