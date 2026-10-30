@@ -23,6 +23,11 @@ PRODUCT_COPY_FILES += \
     vendor/nothing/Metroid/proprietary/odm/etc/sysconfig/sku_TUR/qsb_widget.xml:$(TARGET_COPY_OUT_ODM)/etc/sysconfig/sku_TUR/qsb_widget.xml \
     vendor/nothing/Metroid/proprietary/odm/etc/sysconfig/sku_TUR/tmada.xml:$(TARGET_COPY_OUT_ODM)/etc/sysconfig/sku_TUR/tmada.xml \
     vendor/nothing/Metroid/proprietary/odm/etc/ueventd.rc:$(TARGET_COPY_OUT_ODM)/etc/ueventd.rc \
+    vendor/nothing/Metroid/proprietary/odm/lib64/android.hardware.memtrack-V1-ndk.so:$(TARGET_COPY_OUT_ODM)/lib64/android.hardware.memtrack-V1-ndk.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/android.hardware.sensors-V2-ndk.so:$(TARGET_COPY_OUT_ODM)/lib64/android.hardware.sensors-V2-ndk.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/android.hardware.thermal-V2-ndk.so:$(TARGET_COPY_OUT_ODM)/lib64/android.hardware.thermal-V2-ndk.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/android.hardware.usb-V1-ndk.so:$(TARGET_COPY_OUT_ODM)/lib64/android.hardware.usb-V1-ndk.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/android.hardware.wifi-V2-ndk.so:$(TARGET_COPY_OUT_ODM)/lib64/android.hardware.wifi-V2-ndk.so \
     vendor/nothing/Metroid/proprietary/odm/lib64/libPeripheralStateUtils.so:$(TARGET_COPY_OUT_ODM)/lib64/libPeripheralStateUtils.so \
     vendor/nothing/Metroid/proprietary/odm/lib64/libagm.so:$(TARGET_COPY_OUT_ODM)/lib64/libagm.so \
     vendor/nothing/Metroid/proprietary/odm/lib64/libagm_compress_plugin.so:$(TARGET_COPY_OUT_ODM)/lib64/libagm_compress_plugin.so \
@@ -45,8 +50,10 @@ PRODUCT_COPY_FILES += \
     vendor/nothing/Metroid/proprietary/odm/lib64/libpalipcservice.so:$(TARGET_COPY_OUT_ODM)/lib64/libpalipcservice.so \
     vendor/nothing/Metroid/proprietary/odm/lib64/libsndcardparser.so:$(TARGET_COPY_OUT_ODM)/lib64/libsndcardparser.so \
     vendor/nothing/Metroid/proprietary/odm/lib64/libvui_intf.so:$(TARGET_COPY_OUT_ODM)/lib64/libvui_intf.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libwifi-system-iface.so:$(TARGET_COPY_OUT_ODM)/lib64/libwifi-system-iface.so \
     vendor/nothing/Metroid/proprietary/odm/lib64/vendor.qti.hardware.agm-V1-ndk.so:$(TARGET_COPY_OUT_ODM)/lib64/vendor.qti.hardware.agm-V1-ndk.so \
     vendor/nothing/Metroid/proprietary/odm/lib64/vendor.qti.hardware.pal-V1-ndk.so:$(TARGET_COPY_OUT_ODM)/lib64/vendor.qti.hardware.pal-V1-ndk.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/vendor.qti.hardware.wifi.supplicant-V1-ndk.so:$(TARGET_COPY_OUT_ODM)/lib64/vendor.qti.hardware.wifi.supplicant-V1-ndk.so \
     vendor/nothing/Metroid/proprietary/odm/overlayfs_origin/vendor/etc/init/android.hardware.thales.ST54L.rc:$(TARGET_COPY_OUT_ODM)/overlayfs_origin/vendor/etc/init/android.hardware.thales.ST54L.rc \
     vendor/nothing/Metroid/proprietary/odm/overlayfs_origin/vendor/etc/init/android.hardware.weaver-service.thales.rc:$(TARGET_COPY_OUT_ODM)/overlayfs_origin/vendor/etc/init/android.hardware.weaver-service.thales.rc \
     vendor/nothing/Metroid/proprietary/system_ext/etc/dpm/dpm.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/dpm/dpm.conf \
