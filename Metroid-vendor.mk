@@ -23,6 +23,30 @@ PRODUCT_COPY_FILES += \
     vendor/nothing/Metroid/proprietary/odm/etc/sysconfig/sku_TUR/qsb_widget.xml:$(TARGET_COPY_OUT_ODM)/etc/sysconfig/sku_TUR/qsb_widget.xml \
     vendor/nothing/Metroid/proprietary/odm/etc/sysconfig/sku_TUR/tmada.xml:$(TARGET_COPY_OUT_ODM)/etc/sysconfig/sku_TUR/tmada.xml \
     vendor/nothing/Metroid/proprietary/odm/etc/ueventd.rc:$(TARGET_COPY_OUT_ODM)/etc/ueventd.rc \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libPeripheralStateUtils.so:$(TARGET_COPY_OUT_ODM)/lib64/libPeripheralStateUtils.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libagm.so:$(TARGET_COPY_OUT_ODM)/lib64/libagm.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libagm_compress_plugin.so:$(TARGET_COPY_OUT_ODM)/lib64/libagm_compress_plugin.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libagm_mixer_plugin.so:$(TARGET_COPY_OUT_ODM)/lib64/libagm_mixer_plugin.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libagm_pcm_plugin.so:$(TARGET_COPY_OUT_ODM)/lib64/libagm_pcm_plugin.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libagmclient.so:$(TARGET_COPY_OUT_ODM)/lib64/libagmclient.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libagmipcservice.so:$(TARGET_COPY_OUT_ODM)/lib64/libagmipcservice.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libar-acdb.so:$(TARGET_COPY_OUT_ODM)/lib64/libar-acdb.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libar-gpr.so:$(TARGET_COPY_OUT_ODM)/lib64/libar-gpr.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libar-gsl.so:$(TARGET_COPY_OUT_ODM)/lib64/libar-gsl.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libar-pal.so:$(TARGET_COPY_OUT_ODM)/lib64/libar-pal.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libats.so:$(TARGET_COPY_OUT_ODM)/lib64/libats.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libaudiochargerlistener.so:$(TARGET_COPY_OUT_ODM)/lib64/libaudiochargerlistener.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libfmpal.so:$(TARGET_COPY_OUT_ODM)/lib64/libfmpal.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libhfp_pal.so:$(TARGET_COPY_OUT_ODM)/lib64/libhfp_pal.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/liblx-ar_util.so:$(TARGET_COPY_OUT_ODM)/lib64/liblx-ar_util.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/liblx-osal.so:$(TARGET_COPY_OUT_ODM)/lib64/liblx-osal.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libpalclient.so:$(TARGET_COPY_OUT_ODM)/lib64/libpalclient.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libpaleventnotifier.so:$(TARGET_COPY_OUT_ODM)/lib64/libpaleventnotifier.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libpalipcservice.so:$(TARGET_COPY_OUT_ODM)/lib64/libpalipcservice.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libsndcardparser.so:$(TARGET_COPY_OUT_ODM)/lib64/libsndcardparser.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/libvui_intf.so:$(TARGET_COPY_OUT_ODM)/lib64/libvui_intf.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/vendor.qti.hardware.agm-V1-ndk.so:$(TARGET_COPY_OUT_ODM)/lib64/vendor.qti.hardware.agm-V1-ndk.so \
+    vendor/nothing/Metroid/proprietary/odm/lib64/vendor.qti.hardware.pal-V1-ndk.so:$(TARGET_COPY_OUT_ODM)/lib64/vendor.qti.hardware.pal-V1-ndk.so \
     vendor/nothing/Metroid/proprietary/odm/overlayfs_origin/vendor/etc/init/android.hardware.thales.ST54L.rc:$(TARGET_COPY_OUT_ODM)/overlayfs_origin/vendor/etc/init/android.hardware.thales.ST54L.rc \
     vendor/nothing/Metroid/proprietary/odm/overlayfs_origin/vendor/etc/init/android.hardware.weaver-service.thales.rc:$(TARGET_COPY_OUT_ODM)/overlayfs_origin/vendor/etc/init/android.hardware.weaver-service.thales.rc \
     vendor/nothing/Metroid/proprietary/system_ext/etc/dpm/dpm.conf:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/dpm/dpm.conf \
@@ -231,9 +255,17 @@ PRODUCT_COPY_FILES += \
     vendor/nothing/Metroid/proprietary/system_ext/etc/wfdconfigsink.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/wfdconfigsink.xml \
     vendor/nothing/Metroid/proprietary/system_ext/etc/wmshell.protolog.pb:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/wmshell.protolog.pb \
     vendor/nothing/Metroid/proprietary/system_ext/lib64/libtinyxml2-stock.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libtinyxml2-stock.so \
+    vendor/nothing/Metroid/proprietary/vendor/bin/hw/android.hardware.sensors-service.multihal-stock:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.sensors-service.multihal-stock \
+    vendor/nothing/Metroid/proprietary/vendor/bin/hw/android.hardware.thermal-service.qti-stock:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.thermal-service.qti-stock \
+    vendor/nothing/Metroid/proprietary/vendor/bin/hw/android.hardware.usb-service.qti-stock:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.usb-service.qti-stock \
+    vendor/nothing/Metroid/proprietary/vendor/bin/hw/android.hardware.wifi-service-stock:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.wifi-service-stock \
+    vendor/nothing/Metroid/proprietary/vendor/bin/hw/hostapd-stock:$(TARGET_COPY_OUT_VENDOR)/bin/hw/hostapd-stock \
     vendor/nothing/Metroid/proprietary/vendor/bin/hw/vendor.qti.hardware.display.allocator-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/vendor.qti.hardware.display.allocator-service \
     vendor/nothing/Metroid/proprietary/vendor/bin/hw/vendor.qti.hardware.display.composer-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/vendor.qti.hardware.display.composer-service \
     vendor/nothing/Metroid/proprietary/vendor/bin/hw/vendor.qti.hardware.display.demura-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/vendor.qti.hardware.display.demura-service \
+    vendor/nothing/Metroid/proprietary/vendor/bin/hw/vendor.qti.hardware.memtrack-service-stock:$(TARGET_COPY_OUT_VENDOR)/bin/hw/vendor.qti.hardware.memtrack-service-stock \
+    vendor/nothing/Metroid/proprietary/vendor/bin/hw/vendor.qti.hardware.vibrator.service-stock:$(TARGET_COPY_OUT_VENDOR)/bin/hw/vendor.qti.hardware.vibrator.service-stock \
+    vendor/nothing/Metroid/proprietary/vendor/bin/hw/wpa_supplicant-stock:$(TARGET_COPY_OUT_VENDOR)/bin/hw/wpa_supplicant-stock \
     vendor/nothing/Metroid/proprietary/vendor/etc/ASR_binary/Whisper/libQnnHtpV79Skel.so:$(TARGET_COPY_OUT_VENDOR)/etc/ASR_binary/Whisper/libQnnHtpV79Skel.so \
     vendor/nothing/Metroid/proprietary/vendor/etc/ASR_binary/Whisper/speech_float.eai:$(TARGET_COPY_OUT_VENDOR)/etc/ASR_binary/Whisper/speech_float.eai \
     vendor/nothing/Metroid/proprietary/vendor/etc/Diag.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/Diag.cfg \
@@ -748,7 +780,6 @@ PRODUCT_COPY_FILES += \
     vendor/nothing/Metroid/proprietary/vendor/etc/init/android.hardware.security.keymint-service-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.security.keymint-service-qti.rc \
     vendor/nothing/Metroid/proprietary/vendor/etc/init/android.hardware.usb.gadget-service.qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.usb.gadget-service.qti.rc \
     vendor/nothing/Metroid/proprietary/vendor/etc/init/android.hardware.weaver-service-spu-qti.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.weaver-service-spu-qti.rc \
-    vendor/nothing/Metroid/proprietary/vendor/etc/init/android.hardware.wifi.supplicant-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.wifi.supplicant-service.rc \
     vendor/nothing/Metroid/proprietary/vendor/etc/init/boringssl_self_test.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/boringssl_self_test.rc \
     vendor/nothing/Metroid/proprietary/vendor/etc/init/c2painternetservice.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/c2painternetservice.rc \
     vendor/nothing/Metroid/proprietary/vendor/etc/init/cnd.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/cnd.rc \
@@ -1488,6 +1519,7 @@ PRODUCT_COPY_FILES += \
     vendor/nothing/Metroid/proprietary/vendor/etc/wifi/qca6750/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/qca6750/WCNSS_qcom_cfg.ini \
     vendor/nothing/Metroid/proprietary/vendor/etc/wifi/vendor_cmd.xml:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/vendor_cmd.xml \
     vendor/nothing/Metroid/proprietary/vendor/etc/wifi/wcn7750/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wcn7750/WCNSS_qcom_cfg.ini \
+    vendor/nothing/Metroid/proprietary/vendor/etc/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
     vendor/nothing/Metroid/proprietary/vendor/etc/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     vendor/nothing/Metroid/proprietary/vendor/etc/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf \
     vendor/nothing/Metroid/proprietary/vendor/firmware/CAMERA_ICP.b00:$(TARGET_COPY_OUT_VENDOR)/firmware/CAMERA_ICP.b00 \

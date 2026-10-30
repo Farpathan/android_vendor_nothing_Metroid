@@ -142,10 +142,6 @@ on post-fs-data
     mkdir /data/vendor/diag_mdlog 0770 root system
     restorecon_recursive /data/vendor/diag_mdlog
 
-on post-fs-data
-    mkdir /data/vendor/diag_mdlog 0770 root system
-    restorecon_recursive /data/vendor/diag_mdlog
-
 service diag_gpslog_start /system/vendor/bin/diag_mdlog -f /vendor/etc/Diag_gnss.cfg -u -o /data/vendor/diag_mdlog -s 100 -n 15 -c
     class late_start
     user shell
